@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void gotoMyStocks(View v){
-        Intent intent = new Intent(getApplicationContext(), MyStocks.class);
+        Intent intent = new Intent(getApplicationContext(), StockListActivity.class);
         startActivity(intent);
     }
 

@@ -23,14 +23,43 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SearchStocks" />
-        <activity android:name=".MyStocks" />
+        <activity
+            android:name=".MyStocks"
+            android:label="@string/title_activity_my_stocks"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".FinancialNews" />
         <activity android:name=".StockReadOut" />
         <activity android:name=".GenericStockInfo" />
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login" />
-        <activity android:name=".TodaysTidbits"></activity>
+        <activity android:name=".TodaysTidbits" />
+        <activity
+            android:name=".ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".ItemListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ee461l.stockapp.ItemListActivity" />
+        </activity>
+        <activity
+            android:name=".StockListActivity"
+            android:label="@string/title_stock_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".StockDetailActivity"
+            android:label="@string/title_stock_detail"
+            android:parentActivityName=".StockListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ee461l.stockapp.StockListActivity" />
+        </activity>
     </application>
 
 </manifest>
