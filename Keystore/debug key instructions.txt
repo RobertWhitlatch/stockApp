@@ -1,1 +1,3 @@
 Place the debug.keystore file in C:\Users\<user_profile>\.android\
+debug password: android
+production password: EE461L
