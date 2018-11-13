@@ -22,23 +22,31 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".SearchStocks" />
-        <activity android:name=".FinancialNews" />
-        <activity android:name=".GenericStockInfo" />
-
         <activity
             android:name=".StockListActivity"
-            android:label="@string/title_stock_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/my_stocks"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StockDetailActivity"
-            android:label="@string/title_stock_detail"
+            android:label="@string/stock_details"
             android:parentActivityName=".StockListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ee461l.stockapp.StockListActivity" />
         </activity>
+        <activity
+            android:name=".SearchStocks"
+            android:label="@string/search_stocks"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FinancialNews"
+            android:label="@string/financial_news"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TodaysTidbits"
+            android:label="@string/todays_tidbits"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
