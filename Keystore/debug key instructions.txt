@@ -1,0 +1,1 @@
+Place the debug.keystore file in C:\Users\<user_profile>\.android\
