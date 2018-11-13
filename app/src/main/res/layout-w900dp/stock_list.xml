@@ -13,7 +13,7 @@
     tools:context=".StockListActivity">
 
     <!--
-    This layout is a two-pane layout for the Stockss
+    This layout is a two-pane layout for the Stocks
     master/detail flow.
     
     -->

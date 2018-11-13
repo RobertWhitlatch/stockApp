@@ -19,7 +19,7 @@ import ee461l.stockapp.dummy.DummyContent;
 import java.util.List;
 
 /**
- * An activity representing a list of Stockss. This activity
+ * An activity representing a list of Stocks. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
  * lead to a {@link StockDetailActivity} representing
@@ -72,7 +72,7 @@ public class StockListActivity extends AppCompatActivity {
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final ItemListActivity mParentActivity;
+        private final StockListActivity mParentActivity;
         private final List<DummyContent.DummyItem> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {

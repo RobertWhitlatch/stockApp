@@ -110,6 +110,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_item_list">Items</string>
     <string name="title_item_detail">Item Detail</string>
-    <string name="title_stock_list">Stockss</string>
+    <string name="title_stock_list">My Stocks</string>
     <string name="title_stock_detail">Stock Detail</string>
 </resources>
