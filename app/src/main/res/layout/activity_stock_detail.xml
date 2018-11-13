@@ -47,8 +47,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|start"
         android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorAccent"
         app:layout_anchor="@+id/stock_detail_container"
         app:layout_anchorGravity="top|end"
-        app:srcCompat="@android:drawable/stat_notify_chat" />
+        app:srcCompat="@android:drawable/ic_delete" />
 
 </android.support.design.widget.CoordinatorLayout>
