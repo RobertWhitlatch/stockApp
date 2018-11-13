@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         TextView tv = (TextView) findViewById(R.id.user_greeting);
-        String text = "Welcome " + account.getDisplayName();
+        String text = "Welcome, " + account.getGivenName() +"!";
         tv.setText(text);
         findViewById(R.id.sign_in_button).setVisibility(View.INVISIBLE);
     }

@@ -28,7 +28,7 @@ public class LandingPage extends AppCompatActivity {
                     ignored.printStackTrace();
                 }
             }
-        }, 5000);  // LandingWait.postDelay()
+        }, 1000); //changed to 1000 for debugging speed //5000);  // LandingWait.postDelay()
     } // onCreate()
 
     @Override
