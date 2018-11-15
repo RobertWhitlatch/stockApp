@@ -1,4 +1,4 @@
-package ee461l.homework4;
+package ee461l.stockapp;
 
 import android.util.Log;
 
