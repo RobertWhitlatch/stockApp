@@ -1,33 +1,32 @@
 package ee461l.stockapp;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.SearchView;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class SearchStocks extends AppCompatActivity {
 
-    SearchView searchView;
+    private EditText searchQuery;
+    public static String searchResults = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_stocks);
-        searchView = (SearchView) findViewById(R.id.search_field);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // Index against data source here
-                return false;
-            }
+        searchQuery = findViewById(R.id.search_query);
+    }
 
+    public void executeSearch(View v){
+        FetchSearchResults search = new FetchSearchResults(new FetchSearchResults.AsynResponse() {
             @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
+            public void processFinish(Boolean output) {
+                TextView tv = findViewById(R.id.search_results);
+                tv.setText(searchResults);
             }
         });
+        search.execute("https://api.iextrading.com/1.0/stock/" + searchQuery.getText().toString() + "/batch?types=quote,news");
     }
+
 }

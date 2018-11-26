@@ -16,7 +16,8 @@ import static android.content.ContentValues.TAG;
 
 public class HttpHandler {
 
-    HttpHandler() {
+    public HttpHandler() {
+
     }
 
     public String makeServiceCall(String reqUrl) {

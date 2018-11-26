@@ -3,7 +3,7 @@
     <string name="app_name">Stock App</string>
     <string name="bull_market">Bull Market</string>
     <string name="search_stocks">Search Stocks</string>
-    <string name="title_activity_search_stocks">Search Stocks</string>
+    <string name="search">Search</string>
     <string name="my_stocks">My Stocks</string>
     <string name="stock_details">Stock Details</string>
     <string name="todays_tidbits">Today\'s Tidbits</string>
@@ -98,4 +98,5 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="search_hint">Enter Stock Symbol</string>
 </resources>

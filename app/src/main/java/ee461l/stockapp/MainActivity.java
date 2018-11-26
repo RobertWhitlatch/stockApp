@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.sign_in_button).setOnClickListener(this);
     }
 
-//    @Override
-//    protected void onStart(){
-//        super.onStart();
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        updateUI(account);
-//    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        updateUI(account);
+    }
 
     @Override
     public void onClick(View v) {
@@ -82,8 +82,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(account == null){
             return;
         }
-        TextView tv = (TextView) findViewById(R.id.user_greeting);
-        String text = "Welcome, " + account.getGivenName() +"!";
+        TextView tv = findViewById(R.id.user_greeting);
+        String name = account.getGivenName();
+        if(name == null){
+            name = account.getDisplayName();
+        }
+        if(name == null){
+            name = account.getEmail();
+        }
+        String text = "Welcome, " + name + "!";
         tv.setText(text);
         findViewById(R.id.sign_in_button).setVisibility(View.INVISIBLE);
     }
