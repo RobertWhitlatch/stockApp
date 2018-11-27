@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SearchStocks extends AppCompatActivity {
 
     private EditText searchQuery;
