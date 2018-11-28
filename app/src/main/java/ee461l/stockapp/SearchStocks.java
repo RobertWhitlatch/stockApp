@@ -3,10 +3,10 @@ package ee461l.stockapp;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import org.json.*;
+import com.google.gson.Gson;
+
 
 import static ee461l.stockapp.Define.apiEndpoint;
 import static ee461l.stockapp.Define.requestCQN;
@@ -37,12 +37,8 @@ public class SearchStocks extends AppCompatActivity {
             HttpHandler httpHandler = new HttpHandler();
             String jsonStr = httpHandler.makeServiceCall(url[0]);
             if (jsonStr != null) {
-                try {
-                    JSONObject searchResults = new JSONObject(jsonStr);
-
-                } catch (final JSONException e) {
-                    Log.e("JSON", "Json parsing error: " + e.getMessage());
-                }
+                Gson gson = new Gson();
+                info = gson.fromJson(jsonStr,SearchInfo.class);
             }
 
             return null;
