@@ -12,6 +12,8 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 
 import static ee461l.stockapp.Define.*;
 
@@ -49,7 +51,30 @@ public class SearchStocks extends AppCompatActivity {
     public void addFavorite(View v){
         String favoriteSymbol = info.getCompany().getSymbol();
         favorite.setImageResource(android.R.drawable.btn_star_big_on);
-//        TODO: Add symbol to user account when that becomes possible
+        boolean EXIST = false;
+        User user = new User();
+        user.setId(Integer.parseInt(MainActivity.current_account.getId()));
+        user.setName(MainActivity.current_account.getEmail());
+        List<String> favlist = new ArrayList<>();
+        favlist.add(favoriteSymbol);
+        user.setFavorites(favlist);
+
+        for(User userlist : MainActivity.appDataBase.dao().getUsers()){
+            if(userlist.getId() == user.getId()){
+                List<String> existfav = userlist.getFavorites();
+                existfav.add(favoriteSymbol);
+                user.setFavorites(existfav);
+                EXIST = true;
+            }
+        }
+
+        if(EXIST){
+            MainActivity.appDataBase.dao().updateUser(user);
+        }else {
+            MainActivity.appDataBase.dao().addUser(user);
+        }
+
+//        TODO: Add symbol to user account when that becomes possible //  **ONPROGRESS
     }
 
     public void resetSearch(View v){

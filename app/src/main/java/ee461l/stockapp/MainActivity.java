@@ -1,5 +1,6 @@
 package ee461l.stockapp;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     GoogleSignInClient mGoogleSignInClient;
+    public static GoogleSignInAccount current_account; //EDITED
+    public static AppDataBase appDataBase; //EDITED
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +31,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
+        appDataBase = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "userdb").allowMainThreadQueries().build(); //EDITED
     }
 
     @Override
     protected void onStart(){
         super.onStart();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        if(account != null){ //EDITED
+            current_account = account;
+        }
         updateUI(account);
     }
 
@@ -67,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
+            current_account = account; //EDITED
             // Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {
