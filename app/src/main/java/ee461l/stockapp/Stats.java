@@ -3,55 +3,55 @@ package ee461l.stockapp;
 public class Stats {
 
     private String companyName;
-    private String marketcap;
-    private String beta;
-    private String week52high;
-    private String week52low;
-    private String week52change;
-    private String shortInterest;
+    private int marketcap;
+    private double beta;
+    private double week52high;
+    private double week52low;
+    private double week52change;
+    private double shortInterest;
     private String shortDate;
-    private String dividendRate;
-    private String dividendYield;
+    private double dividendRate;
+    private double dividendYield;
     private String exDividendDate;
-    private String latestEPS;
+    private double latestEPS;
     private String latestEPSDate;
-    private String sharesOutstanding;
-    private String _float;
-    private String returnOnEquity;
-    private String consensusEPS;
-    private String numberOfEstimates;
-    private String EPSSurpriseDollar;
-    private String EPSSurprisePercent;
+    private long sharesOutstanding;
+    private int _float;
+    private double returnOnEquity;
+    private double consensusEPS;
+    private int numberOfEstimates;
+    private double EPSSurpriseDollar;
+    private double EPSSurprisePercent;
     private String symbol;
-    private String EBITDA;
-    private String revenue;
-    private String grossProfit;
-    private String cash;
-    private String debt;
-    private String ttmEPS;
-    private String revenuePerShare;
-    private String revenuePerEmployee;
-    private String peRatioHigh;
-    private String peRatioLow;
-    private String returnOnAssets;
-    private String returnOnCapital;
-    private String profitMargin;
-    private String priceToSales;
-    private String priceToBook;
-    private String day200MovingAvg;
-    private String day50MovingAvg;
-    private String institutionPercent;
-    private String insiderPercent;
-    private String shortRatio;
-    private String year5ChangePercent;
-    private String year2ChangePercent;
-    private String year1ChangePercent;
-    private String ytdChangePercent;
-    private String month6ChangePercent;
-    private String month3ChangePercent;
-    private String month1ChangePercent;
-    private String day5ChangePercent;
-    private String day30ChangePercent;
+    private long EBITDA;
+    private long revenue;
+    private long grossProfit;
+    private long cash;
+    private long debt;
+    private double ttmEPS;
+    private int revenuePerShare;
+    private int revenuePerEmployee;
+    private double peRatioHigh;
+    private double peRatioLow;
+    private double returnOnAssets;
+    private double returnOnCapital;
+    private double profitMargin;
+    private double priceToSales;
+    private double priceToBook;
+    private double day200MovingAvg;
+    private double day50MovingAvg;
+    private double institutionPercent;
+    private double insiderPercent;
+    private double shortRatio;
+    private double year5ChangePercent;
+    private double year2ChangePercent;
+    private double year1ChangePercent;
+    private double ytdChangePercent;
+    private double month6ChangePercent;
+    private double month3ChangePercent;
+    private double month1ChangePercent;
+    private double day5ChangePercent;
+    private double day30ChangePercent;
 
     public String getCompanyName() {
         return companyName;
@@ -61,51 +61,51 @@ public class Stats {
         this.companyName = companyName;
     }
 
-    public String getMarketcap() {
+    public int getMarketcap() {
         return marketcap;
     }
 
-    public void setMarketcap(String marketcap) {
+    public void setMarketcap(int marketcap) {
         this.marketcap = marketcap;
     }
 
-    public String getBeta() {
+    public double getBeta() {
         return beta;
     }
 
-    public void setBeta(String beta) {
+    public void setBeta(double beta) {
         this.beta = beta;
     }
 
-    public String getWeek52high() {
+    public double getWeek52high() {
         return week52high;
     }
 
-    public void setWeek52high(String week52high) {
+    public void setWeek52high(double week52high) {
         this.week52high = week52high;
     }
 
-    public String getWeek52low() {
+    public double getWeek52low() {
         return week52low;
     }
 
-    public void setWeek52low(String week52low) {
+    public void setWeek52low(double week52low) {
         this.week52low = week52low;
     }
 
-    public String getWeek52change() {
+    public double getWeek52change() {
         return week52change;
     }
 
-    public void setWeek52change(String week52change) {
+    public void setWeek52change(double week52change) {
         this.week52change = week52change;
     }
 
-    public String getShortInterest() {
+    public double getShortInterest() {
         return shortInterest;
     }
 
-    public void setShortInterest(String shortInterest) {
+    public void setShortInterest(double shortInterest) {
         this.shortInterest = shortInterest;
     }
 
@@ -117,19 +117,19 @@ public class Stats {
         this.shortDate = shortDate;
     }
 
-    public String getDividendRate() {
+    public double getDividendRate() {
         return dividendRate;
     }
 
-    public void setDividendRate(String dividendRate) {
+    public void setDividendRate(double dividendRate) {
         this.dividendRate = dividendRate;
     }
 
-    public String getDividendYield() {
+    public double getDividendYield() {
         return dividendYield;
     }
 
-    public void setDividendYield(String dividendYield) {
+    public void setDividendYield(double dividendYield) {
         this.dividendYield = dividendYield;
     }
 
@@ -141,11 +141,11 @@ public class Stats {
         this.exDividendDate = exDividendDate;
     }
 
-    public String getLatestEPS() {
+    public double getLatestEPS() {
         return latestEPS;
     }
 
-    public void setLatestEPS(String latestEPS) {
+    public void setLatestEPS(double latestEPS) {
         this.latestEPS = latestEPS;
     }
 
@@ -157,59 +157,59 @@ public class Stats {
         this.latestEPSDate = latestEPSDate;
     }
 
-    public String getSharesOutstanding() {
+    public long getSharesOutstanding() {
         return sharesOutstanding;
     }
 
-    public void setSharesOutstanding(String sharesOutstanding) {
+    public void setSharesOutstanding(long sharesOutstanding) {
         this.sharesOutstanding = sharesOutstanding;
     }
 
-    public String get_float() {
+    public int get_float() {
         return _float;
     }
 
-    public void set_float(String _float) {
+    public void set_float(int _float) {
         this._float = _float;
     }
 
-    public String getReturnOnEquity() {
+    public double getReturnOnEquity() {
         return returnOnEquity;
     }
 
-    public void setReturnOnEquity(String returnOnEquity) {
+    public void setReturnOnEquity(double returnOnEquity) {
         this.returnOnEquity = returnOnEquity;
     }
 
-    public String getConsensusEPS() {
+    public double getConsensusEPS() {
         return consensusEPS;
     }
 
-    public void setConsensusEPS(String consensusEPS) {
+    public void setConsensusEPS(double consensusEPS) {
         this.consensusEPS = consensusEPS;
     }
 
-    public String getNumberOfEstimates() {
+    public int getNumberOfEstimates() {
         return numberOfEstimates;
     }
 
-    public void setNumberOfEstimates(String numberOfEstimates) {
+    public void setNumberOfEstimates(int numberOfEstimates) {
         this.numberOfEstimates = numberOfEstimates;
     }
 
-    public String getEPSSurpriseDollar() {
+    public double getEPSSurpriseDollar() {
         return EPSSurpriseDollar;
     }
 
-    public void setEPSSurpriseDollar(String EPSSurpriseDollar) {
+    public void setEPSSurpriseDollar(double EPSSurpriseDollar) {
         this.EPSSurpriseDollar = EPSSurpriseDollar;
     }
 
-    public String getEPSSurprisePercent() {
+    public double getEPSSurprisePercent() {
         return EPSSurprisePercent;
     }
 
-    public void setEPSSurprisePercent(String EPSSurprisePercent) {
+    public void setEPSSurprisePercent(double EPSSurprisePercent) {
         this.EPSSurprisePercent = EPSSurprisePercent;
     }
 
@@ -221,235 +221,235 @@ public class Stats {
         this.symbol = symbol;
     }
 
-    public String getEBITDA() {
+    public long getEBITDA() {
         return EBITDA;
     }
 
-    public void setEBITDA(String EBITDA) {
+    public void setEBITDA(long EBITDA) {
         this.EBITDA = EBITDA;
     }
 
-    public String getRevenue() {
+    public long getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(String revenue) {
+    public void setRevenue(long revenue) {
         this.revenue = revenue;
     }
 
-    public String getGrossProfit() {
+    public long getGrossProfit() {
         return grossProfit;
     }
 
-    public void setGrossProfit(String grossProfit) {
+    public void setGrossProfit(long grossProfit) {
         this.grossProfit = grossProfit;
     }
 
-    public String getCash() {
+    public long getCash() {
         return cash;
     }
 
-    public void setCash(String cash) {
+    public void setCash(long cash) {
         this.cash = cash;
     }
 
-    public String getDebt() {
+    public long getDebt() {
         return debt;
     }
 
-    public void setDebt(String debt) {
+    public void setDebt(long debt) {
         this.debt = debt;
     }
 
-    public String getTtmEPS() {
+    public double getTtmEPS() {
         return ttmEPS;
     }
 
-    public void setTtmEPS(String ttmEPS) {
+    public void setTtmEPS(double ttmEPS) {
         this.ttmEPS = ttmEPS;
     }
 
-    public String getRevenuePerShare() {
+    public int getRevenuePerShare() {
         return revenuePerShare;
     }
 
-    public void setRevenuePerShare(String revenuePerShare) {
+    public void setRevenuePerShare(int revenuePerShare) {
         this.revenuePerShare = revenuePerShare;
     }
 
-    public String getRevenuePerEmployee() {
+    public int getRevenuePerEmployee() {
         return revenuePerEmployee;
     }
 
-    public void setRevenuePerEmployee(String revenuePerEmployee) {
+    public void setRevenuePerEmployee(int revenuePerEmployee) {
         this.revenuePerEmployee = revenuePerEmployee;
     }
 
-    public String getPeRatioHigh() {
+    public double getPeRatioHigh() {
         return peRatioHigh;
     }
 
-    public void setPeRatioHigh(String peRatioHigh) {
+    public void setPeRatioHigh(double peRatioHigh) {
         this.peRatioHigh = peRatioHigh;
     }
 
-    public String getPeRatioLow() {
+    public double getPeRatioLow() {
         return peRatioLow;
     }
 
-    public void setPeRatioLow(String peRatioLow) {
+    public void setPeRatioLow(double peRatioLow) {
         this.peRatioLow = peRatioLow;
     }
 
-    public String getReturnOnAssets() {
+    public double getReturnOnAssets() {
         return returnOnAssets;
     }
 
-    public void setReturnOnAssets(String returnOnAssets) {
+    public void setReturnOnAssets(double returnOnAssets) {
         this.returnOnAssets = returnOnAssets;
     }
 
-    public String getReturnOnCapital() {
+    public double getReturnOnCapital() {
         return returnOnCapital;
     }
 
-    public void setReturnOnCapital(String returnOnCapital) {
+    public void setReturnOnCapital(double returnOnCapital) {
         this.returnOnCapital = returnOnCapital;
     }
 
-    public String getProfitMargin() {
+    public double getProfitMargin() {
         return profitMargin;
     }
 
-    public void setProfitMargin(String profitMargin) {
+    public void setProfitMargin(double profitMargin) {
         this.profitMargin = profitMargin;
     }
 
-    public String getPriceToSales() {
+    public double getPriceToSales() {
         return priceToSales;
     }
 
-    public void setPriceToSales(String priceToSales) {
+    public void setPriceToSales(double priceToSales) {
         this.priceToSales = priceToSales;
     }
 
-    public String getPriceToBook() {
+    public double getPriceToBook() {
         return priceToBook;
     }
 
-    public void setPriceToBook(String priceToBook) {
+    public void setPriceToBook(double priceToBook) {
         this.priceToBook = priceToBook;
     }
 
-    public String getDay200MovingAvg() {
+    public double getDay200MovingAvg() {
         return day200MovingAvg;
     }
 
-    public void setDay200MovingAvg(String day200MovingAvg) {
+    public void setDay200MovingAvg(double day200MovingAvg) {
         this.day200MovingAvg = day200MovingAvg;
     }
 
-    public String getDay50MovingAvg() {
+    public double getDay50MovingAvg() {
         return day50MovingAvg;
     }
 
-    public void setDay50MovingAvg(String day50MovingAvg) {
+    public void setDay50MovingAvg(double day50MovingAvg) {
         this.day50MovingAvg = day50MovingAvg;
     }
 
-    public String getInstitutionPercent() {
+    public double getInstitutionPercent() {
         return institutionPercent;
     }
 
-    public void setInstitutionPercent(String institutionPercent) {
+    public void setInstitutionPercent(double institutionPercent) {
         this.institutionPercent = institutionPercent;
     }
 
-    public String getInsiderPercent() {
+    public double getInsiderPercent() {
         return insiderPercent;
     }
 
-    public void setInsiderPercent(String insiderPercent) {
+    public void setInsiderPercent(double insiderPercent) {
         this.insiderPercent = insiderPercent;
     }
 
-    public String getShortRatio() {
+    public double getShortRatio() {
         return shortRatio;
     }
 
-    public void setShortRatio(String shortRatio) {
+    public void setShortRatio(double shortRatio) {
         this.shortRatio = shortRatio;
     }
 
-    public String getYear5ChangePercent() {
+    public double getYear5ChangePercent() {
         return year5ChangePercent;
     }
 
-    public void setYear5ChangePercent(String year5ChangePercent) {
+    public void setYear5ChangePercent(double year5ChangePercent) {
         this.year5ChangePercent = year5ChangePercent;
     }
 
-    public String getYear2ChangePercent() {
+    public double getYear2ChangePercent() {
         return year2ChangePercent;
     }
 
-    public void setYear2ChangePercent(String year2ChangePercent) {
+    public void setYear2ChangePercent(double year2ChangePercent) {
         this.year2ChangePercent = year2ChangePercent;
     }
 
-    public String getYear1ChangePercent() {
+    public double getYear1ChangePercent() {
         return year1ChangePercent;
     }
 
-    public void setYear1ChangePercent(String year1ChangePercent) {
+    public void setYear1ChangePercent(double year1ChangePercent) {
         this.year1ChangePercent = year1ChangePercent;
     }
 
-    public String getYtdChangePercent() {
+    public double getYtdChangePercent() {
         return ytdChangePercent;
     }
 
-    public void setYtdChangePercent(String ytdChangePercent) {
+    public void setYtdChangePercent(double ytdChangePercent) {
         this.ytdChangePercent = ytdChangePercent;
     }
 
-    public String getMonth6ChangePercent() {
+    public double getMonth6ChangePercent() {
         return month6ChangePercent;
     }
 
-    public void setMonth6ChangePercent(String month6ChangePercent) {
+    public void setMonth6ChangePercent(double month6ChangePercent) {
         this.month6ChangePercent = month6ChangePercent;
     }
 
-    public String getMonth3ChangePercent() {
+    public double getMonth3ChangePercent() {
         return month3ChangePercent;
     }
 
-    public void setMonth3ChangePercent(String month3ChangePercent) {
+    public void setMonth3ChangePercent(double month3ChangePercent) {
         this.month3ChangePercent = month3ChangePercent;
     }
 
-    public String getMonth1ChangePercent() {
+    public double getMonth1ChangePercent() {
         return month1ChangePercent;
     }
 
-    public void setMonth1ChangePercent(String month1ChangePercent) {
+    public void setMonth1ChangePercent(double month1ChangePercent) {
         this.month1ChangePercent = month1ChangePercent;
     }
 
-    public String getDay5ChangePercent() {
+    public double getDay5ChangePercent() {
         return day5ChangePercent;
     }
 
-    public void setDay5ChangePercent(String day5ChangePercent) {
+    public void setDay5ChangePercent(double day5ChangePercent) {
         this.day5ChangePercent = day5ChangePercent;
     }
 
-    public String getDay30ChangePercent() {
+    public double getDay30ChangePercent() {
         return day30ChangePercent;
     }
 
-    public void setDay30ChangePercent(String day30ChangePercent) {
+    public void setDay30ChangePercent(double day30ChangePercent) {
         this.day30ChangePercent = day30ChangePercent;
     }
 }

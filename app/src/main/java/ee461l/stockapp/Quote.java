@@ -7,41 +7,41 @@ public class Quote {
     private String primaryExchange;
     private String sector;
     private String calculationPrice;
-    private String open;
-    private String openTime;
-    private String close;
-    private String closeTime;
-    private String high;
-    private String low;
-    private String latestPrice;
+    private double open;
+    private long openTime;
+    private double close;
+    private long closeTime;
+    private double high;
+    private double low;
+    private double latestPrice;
     private String latestSource;
     private String latestTime;
-    private String latestUpdate;
-    private String latestVolume;
-    private String iexRealtimePrice;
-    private String iexRealtimeSize;
-    private String iexLastUpdated;
-    private String delayedPrice;
-    private String delayedPriceTime;
-    private String extendedPrice;
-    private String extendedChange;
-    private String extendedChangePercent;
-    private String extendedPriceTime;
-    private String previousClose;
-    private String change;
-    private String changePercent;
-    private String iexMarketPercent;
-    private String iexVolume;
-    private String avgTotalVolume;
-    private String iexBidPrice;
-    private String iexBidSize;
-    private String iexAskPrice;
-    private String iexAskSize;
-    private String marketCap;
-    private String peRatio;
-    private String week52High;
-    private String week52Low;
-    private String ytdChange;
+    private double latestUpdate;
+    private int latestVolume;
+    private double iexRealtimePrice;
+    private int iexRealtimeSize;
+    private long iexLastUpdated;
+    private double delayedPrice;
+    private long delayedPriceTime;
+    private double extendedPrice;
+    private double extendedChange;
+    private double extendedChangePercent;
+    private long extendedPriceTime;
+    private double previousClose;
+    private double change;
+    private double changePercent;
+    private double iexMarketPercent;
+    private double iexVolume;
+    private double avgTotalVolume;
+    private double iexBidPrice;
+    private double iexBidSize;
+    private double iexAskPrice;
+    private double iexAskSize;
+    private long marketCap;
+    private double peRatio;
+    private double week52High;
+    private double week52Low;
+    private double ytdChange;
 
     public String getSymbol() {
         return symbol;
@@ -83,59 +83,59 @@ public class Quote {
         this.calculationPrice = calculationPrice;
     }
 
-    public String getOpen() {
+    public double getOpen() {
         return open;
     }
 
-    public void setOpen(String open) {
+    public void setOpen(double open) {
         this.open = open;
     }
 
-    public String getOpenTime() {
+    public long getOpenTime() {
         return openTime;
     }
 
-    public void setOpenTime(String openTime) {
+    public void setOpenTime(long openTime) {
         this.openTime = openTime;
     }
 
-    public String getClose() {
+    public double getClose() {
         return close;
     }
 
-    public void setClose(String close) {
+    public void setClose(double close) {
         this.close = close;
     }
 
-    public String getCloseTime() {
+    public long getCloseTime() {
         return closeTime;
     }
 
-    public void setCloseTime(String closeTime) {
+    public void setCloseTime(long closeTime) {
         this.closeTime = closeTime;
     }
 
-    public String getHigh() {
+    public double getHigh() {
         return high;
     }
 
-    public void setHigh(String high) {
+    public void setHigh(double high) {
         this.high = high;
     }
 
-    public String getLow() {
+    public double getLow() {
         return low;
     }
 
-    public void setLow(String low) {
+    public void setLow(double low) {
         this.low = low;
     }
 
-    public String getLatestPrice() {
+    public double getLatestPrice() {
         return latestPrice;
     }
 
-    public void setLatestPrice(String latestPrice) {
+    public void setLatestPrice(double latestPrice) {
         this.latestPrice = latestPrice;
     }
 
@@ -155,211 +155,211 @@ public class Quote {
         this.latestTime = latestTime;
     }
 
-    public String getLatestUpdate() {
+    public double getLatestUpdate() {
         return latestUpdate;
     }
 
-    public void setLatestUpdate(String latestUpdate) {
+    public void setLatestUpdate(double latestUpdate) {
         this.latestUpdate = latestUpdate;
     }
 
-    public String getLatestVolume() {
+    public int getLatestVolume() {
         return latestVolume;
     }
 
-    public void setLatestVolume(String latestVolume) {
+    public void setLatestVolume(int latestVolume) {
         this.latestVolume = latestVolume;
     }
 
-    public String getIexRealtimePrice() {
+    public double getIexRealtimePrice() {
         return iexRealtimePrice;
     }
 
-    public void setIexRealtimePrice(String iexRealtimePrice) {
+    public void setIexRealtimePrice(double iexRealtimePrice) {
         this.iexRealtimePrice = iexRealtimePrice;
     }
 
-    public String getIexRealtimeSize() {
+    public int getIexRealtimeSize() {
         return iexRealtimeSize;
     }
 
-    public void setIexRealtimeSize(String iexRealtimeSize) {
+    public void setIexRealtimeSize(int iexRealtimeSize) {
         this.iexRealtimeSize = iexRealtimeSize;
     }
 
-    public String getIexLastUpdated() {
+    public long getIexLastUpdated() {
         return iexLastUpdated;
     }
 
-    public void setIexLastUpdated(String iexLastUpdated) {
+    public void setIexLastUpdated(long iexLastUpdated) {
         this.iexLastUpdated = iexLastUpdated;
     }
 
-    public String getDelayedPrice() {
+    public double getDelayedPrice() {
         return delayedPrice;
     }
 
-    public void setDelayedPrice(String delayedPrice) {
+    public void setDelayedPrice(double delayedPrice) {
         this.delayedPrice = delayedPrice;
     }
 
-    public String getDelayedPriceTime() {
+    public long getDelayedPriceTime() {
         return delayedPriceTime;
     }
 
-    public void setDelayedPriceTime(String delayedPriceTime) {
+    public void setDelayedPriceTime(long delayedPriceTime) {
         this.delayedPriceTime = delayedPriceTime;
     }
 
-    public String getExtendedPrice() {
+    public double getExtendedPrice() {
         return extendedPrice;
     }
 
-    public void setExtendedPrice(String extendedPrice) {
+    public void setExtendedPrice(double extendedPrice) {
         this.extendedPrice = extendedPrice;
     }
 
-    public String getExtendedChange() {
+    public double getExtendedChange() {
         return extendedChange;
     }
 
-    public void setExtendedChange(String extendedChange) {
+    public void setExtendedChange(double extendedChange) {
         this.extendedChange = extendedChange;
     }
 
-    public String getExtendedChangePercent() {
+    public double getExtendedChangePercent() {
         return extendedChangePercent;
     }
 
-    public void setExtendedChangePercent(String extendedChangePercent) {
+    public void setExtendedChangePercent(double extendedChangePercent) {
         this.extendedChangePercent = extendedChangePercent;
     }
 
-    public String getExtendedPriceTime() {
+    public long getExtendedPriceTime() {
         return extendedPriceTime;
     }
 
-    public void setExtendedPriceTime(String extendedPriceTime) {
+    public void setExtendedPriceTime(long extendedPriceTime) {
         this.extendedPriceTime = extendedPriceTime;
     }
 
-    public String getPreviousClose() {
+    public double getPreviousClose() {
         return previousClose;
     }
 
-    public void setPreviousClose(String previousClose) {
+    public void setPreviousClose(double previousClose) {
         this.previousClose = previousClose;
     }
 
-    public String getChange() {
+    public double getChange() {
         return change;
     }
 
-    public void setChange(String change) {
+    public void setChange(double change) {
         this.change = change;
     }
 
-    public String getChangePercent() {
+    public double getChangePercent() {
         return changePercent;
     }
 
-    public void setChangePercent(String changePercent) {
+    public void setChangePercent(double changePercent) {
         this.changePercent = changePercent;
     }
 
-    public String getIexMarketPercent() {
+    public double getIexMarketPercent() {
         return iexMarketPercent;
     }
 
-    public void setIexMarketPercent(String iexMarketPercent) {
+    public void setIexMarketPercent(double iexMarketPercent) {
         this.iexMarketPercent = iexMarketPercent;
     }
 
-    public String getIexVolume() {
+    public double getIexVolume() {
         return iexVolume;
     }
 
-    public void setIexVolume(String iexVolume) {
+    public void setIexVolume(double iexVolume) {
         this.iexVolume = iexVolume;
     }
 
-    public String getAvgTotalVolume() {
+    public double getAvgTotalVolume() {
         return avgTotalVolume;
     }
 
-    public void setAvgTotalVolume(String avgTotalVolume) {
+    public void setAvgTotalVolume(double avgTotalVolume) {
         this.avgTotalVolume = avgTotalVolume;
     }
 
-    public String getIexBidPrice() {
+    public double getIexBidPrice() {
         return iexBidPrice;
     }
 
-    public void setIexBidPrice(String iexBidPrice) {
+    public void setIexBidPrice(double iexBidPrice) {
         this.iexBidPrice = iexBidPrice;
     }
 
-    public String getIexBidSize() {
+    public double getIexBidSize() {
         return iexBidSize;
     }
 
-    public void setIexBidSize(String iexBidSize) {
+    public void setIexBidSize(double iexBidSize) {
         this.iexBidSize = iexBidSize;
     }
 
-    public String getIexAskPrice() {
+    public double getIexAskPrice() {
         return iexAskPrice;
     }
 
-    public void setIexAskPrice(String iexAskPrice) {
+    public void setIexAskPrice(double iexAskPrice) {
         this.iexAskPrice = iexAskPrice;
     }
 
-    public String getIexAskSize() {
+    public double getIexAskSize() {
         return iexAskSize;
     }
 
-    public void setIexAskSize(String iexAskSize) {
+    public void setIexAskSize(double iexAskSize) {
         this.iexAskSize = iexAskSize;
     }
 
-    public String getMarketCap() {
+    public long getMarketCap() {
         return marketCap;
     }
 
-    public void setMarketCap(String marketCap) {
+    public void setMarketCap(long marketCap) {
         this.marketCap = marketCap;
     }
 
-    public String getPeRatio() {
+    public double getPeRatio() {
         return peRatio;
     }
 
-    public void setPeRatio(String peRatio) {
+    public void setPeRatio(double peRatio) {
         this.peRatio = peRatio;
     }
 
-    public String getWeek52High() {
+    public double getWeek52High() {
         return week52High;
     }
 
-    public void setWeek52High(String week52High) {
+    public void setWeek52High(double week52High) {
         this.week52High = week52High;
     }
 
-    public String getWeek52Low() {
+    public double getWeek52Low() {
         return week52Low;
     }
 
-    public void setWeek52Low(String week52Low) {
+    public void setWeek52Low(double week52Low) {
         this.week52Low = week52Low;
     }
 
-    public String getYtdChange() {
+    public double getYtdChange() {
         return ytdChange;
     }
 
-    public void setYtdChange(String ytdChange) {
+    public void setYtdChange(double ytdChange) {
         this.ytdChange = ytdChange;
     }
 }

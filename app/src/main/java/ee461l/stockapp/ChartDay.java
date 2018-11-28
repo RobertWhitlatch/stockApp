@@ -3,26 +3,17 @@ package ee461l.stockapp;
 public class ChartDay {
 
     private String date;
-    private String minute;
+    private double open;
+    private double high;
+    private double low;
+    private double close;
+    private long volume;
+    private long unadjustedVolume;
+    private double change;
+    private double changePercent;
+    private double vwap;
     private String label;
-    private String high;
-    private String low;
-    private String average;
-    private String volume;
-    private String notional;
-    private String numberOfTrades;
-    private String marketHigh;
-    private String marketLow;
-    private String marketAverage;
-    private String marketVolume;
-    private String marketNotional;
-    private String marketNumberOfTrades;
-    private String open;
-    private String close;
-    private String marketOpen;
-    private String marketClose;
-    private String changeOverTime;
-    private String marketChangeOverTime;
+    private double changeOverTime;
 
     public String getDate() {
         return date;
@@ -32,12 +23,76 @@ public class ChartDay {
         this.date = date;
     }
 
-    public String getMinute() {
-        return minute;
+    public double getOpen() {
+        return open;
     }
 
-    public void setMinute(String minute) {
-        this.minute = minute;
+    public void setOpen(double open) {
+        this.open = open;
+    }
+
+    public double getHigh() {
+        return high;
+    }
+
+    public void setHigh(double high) {
+        this.high = high;
+    }
+
+    public double getLow() {
+        return low;
+    }
+
+    public void setLow(double low) {
+        this.low = low;
+    }
+
+    public double getClose() {
+        return close;
+    }
+
+    public void setClose(double close) {
+        this.close = close;
+    }
+
+    public long getVolume() {
+        return volume;
+    }
+
+    public void setVolume(long volume) {
+        this.volume = volume;
+    }
+
+    public long getUnadjustedVolume() {
+        return unadjustedVolume;
+    }
+
+    public void setUnadjustedVolume(int unadjustedVolume) {
+        this.unadjustedVolume = unadjustedVolume;
+    }
+
+    public double getChange() {
+        return change;
+    }
+
+    public void setChange(double change) {
+        this.change = change;
+    }
+
+    public double getChangePercent() {
+        return changePercent;
+    }
+
+    public void setChangePercent(double changePercent) {
+        this.changePercent = changePercent;
+    }
+
+    public double getVwap() {
+        return vwap;
+    }
+
+    public void setVwap(double vwap) {
+        this.vwap = vwap;
     }
 
     public String getLabel() {
@@ -48,147 +103,11 @@ public class ChartDay {
         this.label = label;
     }
 
-    public String getHigh() {
-        return high;
-    }
-
-    public void setHigh(String high) {
-        this.high = high;
-    }
-
-    public String getLow() {
-        return low;
-    }
-
-    public void setLow(String low) {
-        this.low = low;
-    }
-
-    public String getAverage() {
-        return average;
-    }
-
-    public void setAverage(String average) {
-        this.average = average;
-    }
-
-    public String getVolume() {
-        return volume;
-    }
-
-    public void setVolume(String volume) {
-        this.volume = volume;
-    }
-
-    public String getNotional() {
-        return notional;
-    }
-
-    public void setNotional(String notional) {
-        this.notional = notional;
-    }
-
-    public String getNumberOfTrades() {
-        return numberOfTrades;
-    }
-
-    public void setNumberOfTrades(String numberOfTrades) {
-        this.numberOfTrades = numberOfTrades;
-    }
-
-    public String getMarketHigh() {
-        return marketHigh;
-    }
-
-    public void setMarketHigh(String marketHigh) {
-        this.marketHigh = marketHigh;
-    }
-
-    public String getMarketLow() {
-        return marketLow;
-    }
-
-    public void setMarketLow(String marketLow) {
-        this.marketLow = marketLow;
-    }
-
-    public String getMarketAverage() {
-        return marketAverage;
-    }
-
-    public void setMarketAverage(String marketAverage) {
-        this.marketAverage = marketAverage;
-    }
-
-    public String getMarketVolume() {
-        return marketVolume;
-    }
-
-    public void setMarketVolume(String marketVolume) {
-        this.marketVolume = marketVolume;
-    }
-
-    public String getMarketNotional() {
-        return marketNotional;
-    }
-
-    public void setMarketNotional(String marketNotional) {
-        this.marketNotional = marketNotional;
-    }
-
-    public String getMarketNumberOfTrades() {
-        return marketNumberOfTrades;
-    }
-
-    public void setMarketNumberOfTrades(String marketNumberOfTrades) {
-        this.marketNumberOfTrades = marketNumberOfTrades;
-    }
-
-    public String getOpen() {
-        return open;
-    }
-
-    public void setOpen(String open) {
-        this.open = open;
-    }
-
-    public String getClose() {
-        return close;
-    }
-
-    public void setClose(String close) {
-        this.close = close;
-    }
-
-    public String getMarketOpen() {
-        return marketOpen;
-    }
-
-    public void setMarketOpen(String marketOpen) {
-        this.marketOpen = marketOpen;
-    }
-
-    public String getMarketClose() {
-        return marketClose;
-    }
-
-    public void setMarketClose(String marketClose) {
-        this.marketClose = marketClose;
-    }
-
-    public String getChangeOverTime() {
+    public double getChangeOverTime() {
         return changeOverTime;
     }
 
-    public void setChangeOverTime(String changeOverTime) {
+    public void setChangeOverTime(double changeOverTime) {
         this.changeOverTime = changeOverTime;
-    }
-
-    public String getMarketChangeOverTime() {
-        return marketChangeOverTime;
-    }
-
-    public void setMarketChangeOverTime(String marketChangeOverTime) {
-        this.marketChangeOverTime = marketChangeOverTime;
     }
 }
