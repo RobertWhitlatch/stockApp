@@ -8,8 +8,7 @@ import android.widget.EditText;
 import com.google.gson.Gson;
 
 
-import static ee461l.stockapp.Define.apiEndpoint;
-import static ee461l.stockapp.Define.requestCQN;
+import static ee461l.stockapp.Define.*;
 
 public class SearchStocks extends AppCompatActivity {
 
@@ -25,12 +24,11 @@ public class SearchStocks extends AppCompatActivity {
 
     public void executeSearch(View v){
         FetchStockResults fetchStock = new FetchStockResults();
-        fetchStock.execute(apiEndpoint + searchQuery.getText().toString() + requestCQN);
+        fetchStock.execute(apiEndpoint + searchQuery.getText().toString() + requestCQNSC);
     }
 
 
     private static class FetchStockResults extends AsyncTask<String,Void,Void> {
-
 
         @Override
         protected Void doInBackground(String... url) {
@@ -40,7 +38,6 @@ public class SearchStocks extends AppCompatActivity {
                 Gson gson = new Gson();
                 info = gson.fromJson(jsonStr,SearchInfo.class);
             }
-
             return null;
         }
     }

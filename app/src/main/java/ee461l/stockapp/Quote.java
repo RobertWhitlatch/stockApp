@@ -43,21 +43,6 @@ public class Quote {
     private String week52Low;
     private String ytdChange;
 
-
-//    private String jsonStr;
-//
-//    public Quote(String jsonStr){
-//        this.jsonStr = jsonStr;
-//    }
-//
-//    public String getJsonStr() {
-//        return jsonStr;
-//    }
-//
-//    public void setJsonStr(String jsonStr) {
-//        this.jsonStr = jsonStr;
-//    }
-
     public String getSymbol() {
         return symbol;
     }

@@ -12,20 +12,6 @@ public class Company {
     private String sector;
     private String[] tags;
 
-//    private String jsonStr;
-//
-//    public Company(String jsonStr){
-//        this.jsonStr = jsonStr;
-//    }
-//
-//    public String getJsonStr() {
-//        return jsonStr;
-//    }
-//
-//    public void setJsonStr(String jsonStr) {
-//        this.jsonStr = jsonStr;
-//    }
-
     public String getSymbol() {
         return symbol;
     }

@@ -10,21 +10,6 @@ public class News {
     private String related;
     private String image;
 
-
-//    private String jsonStr;
-//
-//    public News(String jsonStr){
-//        this.jsonStr = jsonStr;
-//    }
-//
-//    public String getJsonStr() {
-//        return jsonStr;
-//    }
-//
-//    public void setJsonStr(String jsonStr) {
-//        this.jsonStr = jsonStr;
-//    }
-
     public String getDatetime() {
         return datetime;
     }

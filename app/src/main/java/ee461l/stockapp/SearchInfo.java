@@ -5,20 +5,8 @@ public class SearchInfo {
     private Company company;
     private Quote quote;
     private News[] news;
-
-//    private String searchTerm;
-//
-//    public SearchInfo(String searchTerm){
-//        this.searchTerm = searchTerm;
-//    }
-//
-//    public String getSearchTerm() {
-//        return searchTerm;
-//    }
-//
-//    public void setSearchTerm(String searchTerm) {
-//        this.searchTerm = searchTerm;
-//    }
+    private Stats stats;
+    private ChartDay[] chart;
 
     public Company getCompany() {
         return company;
@@ -42,5 +30,21 @@ public class SearchInfo {
 
     public void setNews(News[] news) {
         this.news = news;
+    }
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    public void setStats(Stats stats) {
+        this.stats = stats;
+    }
+
+    public ChartDay[] getChart() {
+        return chart;
+    }
+
+    public void setChart(ChartDay[] chart) {
+        this.chart = chart;
     }
 }
