@@ -7,6 +7,7 @@ public class SearchInfo {
     private News[] news;
     private Stats stats;
     private ChartDay[] chart;
+    private Logo logo;
 
     public Company getCompany() {
         return company;
@@ -46,5 +47,13 @@ public class SearchInfo {
 
     public void setChart(ChartDay[] chart) {
         this.chart = chart;
+    }
+
+    public Logo getLogo() {
+        return logo;
+    }
+
+    public void setLogo(Logo logo) {
+        this.logo = logo;
     }
 }
