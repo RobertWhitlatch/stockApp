@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart(){
         super.onStart();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if(account != null){ //EDITED
+        if(account != null){ //EDITED  (Maybe edge case?)
             current_account = account;
         }
         updateUI(account);
