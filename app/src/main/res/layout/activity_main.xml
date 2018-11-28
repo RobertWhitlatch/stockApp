@@ -15,6 +15,7 @@
         android:onClick="gotoSearchStocks"
         android:text="@string/search_stocks"
         android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,6 +28,7 @@
         android:onClick="gotoMyStocks"
         android:text="@string/my_stocks"
         android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,6 +41,7 @@
         android:onClick="gotoTodaysTidbits"
         android:text="@string/todays_tidbits"
         android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_stocks" />
 
@@ -51,6 +54,7 @@
         android:onClick="gotoFinancialNews"
         android:text="@string/financial_news"
         android:textAlignment="center"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_stocks" />
 

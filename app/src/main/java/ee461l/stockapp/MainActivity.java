@@ -93,6 +93,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String text = "Welcome, " + name + "!";
         tv.setText(text);
         findViewById(R.id.sign_in_button).setVisibility(View.INVISIBLE);
+        findViewById(R.id.search_stocks).setVisibility(View.VISIBLE);
+        findViewById(R.id.my_stocks).setVisibility(View.VISIBLE);
+        findViewById(R.id.todays_tidbits).setVisibility(View.VISIBLE);
+        findViewById(R.id.financial_news).setVisibility(View.VISIBLE);
     }
 
     public void gotoSearchStocks(View v){

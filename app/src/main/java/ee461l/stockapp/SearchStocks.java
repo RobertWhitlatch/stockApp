@@ -4,15 +4,25 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+
 import com.google.gson.Gson;
 
+import java.lang.ref.WeakReference;
 
 import static ee461l.stockapp.Define.*;
 
 public class SearchStocks extends AppCompatActivity {
 
     private EditText searchQuery;
+    private Button searchGo;
+    private Button reset;
+    private ImageButton favorite;
+    private ListView searchResults;
+    private static String searchText;
     public static SearchInfo info = null;
 
     @Override
@@ -20,15 +30,48 @@ public class SearchStocks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_stocks);
         searchQuery = findViewById(R.id.search_query);
+        searchGo = findViewById(R.id.search_go);
+        favorite = findViewById(R.id.add_favorites);
+        reset = findViewById(R.id.reset_search);
+        searchResults = findViewById(R.id.search_results);
     }
 
     public void executeSearch(View v){
-        FetchStockResults fetchStock = new FetchStockResults();
-        fetchStock.execute(apiEndpoint + searchQuery.getText().toString() + requestCQNSC);
+        FetchStockResults fetchStock = new FetchStockResults(favorite, searchResults);
+        searchText = searchQuery.getText().toString();
+        fetchStock.execute(apiEndpoint + searchText + requestCQNSC);
+        searchQuery.setVisibility(View.INVISIBLE);
+        searchGo.setVisibility(View.INVISIBLE);
+        reset.setVisibility(View.VISIBLE);
+        favorite.setVisibility(View.VISIBLE);
     }
 
+    public void addFavorite(View v){
+        String favoriteSymbol = info.getCompany().getSymbol();
+        favorite.setImageResource(android.R.drawable.btn_star_big_on);
+//        TODO: Add symbol to user account when that becomes possible
+    }
+
+    public void resetSearch(View v){
+        searchQuery.setVisibility(View.VISIBLE);
+        searchGo.setVisibility(View.VISIBLE);
+        reset.setVisibility(View.INVISIBLE);
+        favorite.setVisibility(View.INVISIBLE);
+        favorite.setImageResource(android.R.drawable.btn_star_big_off);
+        info = null;
+        searchText = null;
+//        TODO: Clear previous results from screen
+    }
 
     private static class FetchStockResults extends AsyncTask<String,Void,Void> {
+
+        private WeakReference<ImageButton> fav;
+        private WeakReference<ListView> results;
+
+        FetchStockResults(ImageButton fav, ListView results){
+            this.fav = new WeakReference<>(fav);
+            this.results = new WeakReference<>(results);
+        }
 
         @Override
         protected Void doInBackground(String... url) {
@@ -40,6 +83,17 @@ public class SearchStocks extends AppCompatActivity {
             }
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+//            TODO: Check if searched symbol is already a favorite and adjust icon accordingly
+//            if(symbolIsStored(searchText)){
+//                fav.get().setImageResource(android.R.drawable.btn_star_big_on);
+//            }
+//            TODO: Fill out results display
+        }
+
     }
 
 

@@ -17,6 +17,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:visibility="visible"
         android:onClick="executeSearch"
         android:text="@string/search" />
 
@@ -34,32 +35,36 @@
         android:ems="10"
         android:hint="@string/search_hint"
         android:importantForAutofill="no"
-        android:inputType="text" />
+        android:inputType="text"
+        android:visibility="visible" />
 
-    <!--<ScrollView-->
-        <!--android:id="@+id/search_scroll"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:layout_marginStart="16dp"-->
-        <!--android:layout_marginTop="96dp"-->
-        <!--android:layout_marginEnd="16dp"-->
-        <!--android:layout_marginBottom="16dp"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent">-->
+    <Button
+        android:id="@+id/reset_search"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:layout_toStartOf="@+id/add_favorites"
+        android:onClick="resetSearch"
+        android:text="@string/reset"
+        android:visibility="invisible" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/search_results"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textSize="14sp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="parent" />-->
 
-    <!--</ScrollView>-->
+    <ImageButton
+        android:id="@+id/add_favorites"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/add"
+        android:onClick="addFavorite"
+        android:visibility="invisible"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
 
     <ListView
         android:id="@+id/search_results"
@@ -67,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/search_query"
         android:layout_margin="16dp"
+        android:visibility="invisible"
         android:nestedScrollingEnabled="true">
 
     </ListView>
