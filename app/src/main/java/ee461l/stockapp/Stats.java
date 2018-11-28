@@ -3,7 +3,7 @@ package ee461l.stockapp;
 public class Stats {
 
     private String companyName;
-    private int marketcap;
+    private long marketcap;
     private double beta;
     private double week52high;
     private double week52low;
@@ -16,7 +16,7 @@ public class Stats {
     private double latestEPS;
     private String latestEPSDate;
     private long sharesOutstanding;
-    private int _float;
+    private long _float;
     private double returnOnEquity;
     private double consensusEPS;
     private int numberOfEstimates;
@@ -61,11 +61,11 @@ public class Stats {
         this.companyName = companyName;
     }
 
-    public int getMarketcap() {
+    public long getMarketcap() {
         return marketcap;
     }
 
-    public void setMarketcap(int marketcap) {
+    public void setMarketcap(long marketcap) {
         this.marketcap = marketcap;
     }
 
@@ -165,11 +165,11 @@ public class Stats {
         this.sharesOutstanding = sharesOutstanding;
     }
 
-    public int get_float() {
+    public long get_float() {
         return _float;
     }
 
-    public void set_float(int _float) {
+    public void set_float(long _float) {
         this._float = _float;
     }
 
