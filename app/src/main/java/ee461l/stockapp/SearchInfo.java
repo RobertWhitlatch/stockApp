@@ -8,6 +8,7 @@ public class SearchInfo {
     private Stats stats;
     private ChartDay[] chart;
     private Logo logo;
+    private double price;
 
     public Company getCompany() {
         return company;
@@ -55,5 +56,13 @@ public class SearchInfo {
 
     public void setLogo(Logo logo) {
         this.logo = logo;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
