@@ -56,7 +56,7 @@ public class SearchStocks extends AppCompatActivity {
          Basically create a new user whenever a user clicks the Start icon.
          Added current user's information to the object such as id, name and favorite list
          If the user already exists in our database, I pulled their exist favorite list and added the current symbol to it and updated.
-         If not, added a new user to the database so that you can pull it whenever this user wants to add another stock symbol
+         If not, added a new user to the database so that you can pull it whenever this user wants to add another stock symbol.
         */
         User user = new User();
         user.setId(Integer.parseInt(MainActivity.current_account.getId()));  //This could be Null but I don't know
@@ -94,7 +94,9 @@ public class SearchStocks extends AppCompatActivity {
 //        TODO: Clear previous results from screen
     }
 
-    private static class FetchStockResults extends AsyncTask<String,Void,Void> {
+
+    //Changed it to public to Test
+    public static class FetchStockResults extends AsyncTask<String,Void,Void> {
 
         private WeakReference<ImageButton> fav;
         private WeakReference<ListView> results;
