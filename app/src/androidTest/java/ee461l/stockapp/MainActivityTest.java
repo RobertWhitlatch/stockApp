@@ -172,15 +172,14 @@ public class MainActivityTest {
     @Test
     public void DataBaseTest() throws Exception {
         /*
-        This tests if you can read and write our database
+        This tests if you can read our database
          */
-        User user = new User();
+        User user = new User();       // <-------- We added this user already in our Database
         user.setId(1);
         user.setName("EE461L");
         List<String> favorite = new ArrayList<>();
         favorite.add("GOOGL");
         user.setFavorites(favorite);
-        MainActivity.appDataBase.dao().addUser(user);
         List<User> userlist = MainActivity.appDataBase.dao().getUsers();
         User gotuser = new User();
         for(User u : userlist){
