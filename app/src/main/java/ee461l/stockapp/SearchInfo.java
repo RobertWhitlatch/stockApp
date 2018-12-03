@@ -8,7 +8,39 @@ public class SearchInfo {
     private Stats stats;
     private ChartDay[] chart;
     private Logo logo;
-    private double price;
+    private /*double*/ String price;
+
+    public String[] getDisplaySet(){
+        String[] set = new String[30];
+        int i = 0;
+        set[i++] = logo.getUrl();
+        set[i++] = "Description: " + company.getDescription();
+        set[i++] = "Price: " + price;
+        set[i++] = "Primary Exchange: " + quote.getPrimaryExchange();
+        set[i++] = "Open: " + chart[chart.length-1].getOpen();
+        set[i++] = "Close: " + chart[chart.length-1].getClose();
+        set[i++] = "High: " + chart[chart.length-1].getHigh();
+        set[i++] = "Low: " + chart[chart.length-1].getLow();
+        set[i++] = "Change: " + chart[chart.length-1].getChange();
+        set[i++] = "Volume: " + chart[chart.length-1].getVolume();
+        set[i++] = "Market Cap: " + stats.getMarketcap();
+        set[i++] = "30 Day Change Percent: " + stats.getDay30ChangePercent();
+        set[i++] = "Debt: " + stats.getDebt();
+        set[i++] = "Revenue: " + stats.getRevenue();
+        set[i++] = "Gross Profit: " + stats.getGrossProfit();
+        set[i++] = "Cash: " + stats.getCash();
+        for(News paper : news){
+            if(i == news.length){
+                break;
+            }
+            set[i++] = "Headline: " + paper.getHeadline();
+        }
+        return set;
+    }
+
+    public String getSymbol(){
+        return (this.company.getSymbol());
+    }
 
     public Company getCompany() {
         return company;
@@ -58,11 +90,11 @@ public class SearchInfo {
         this.logo = logo;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

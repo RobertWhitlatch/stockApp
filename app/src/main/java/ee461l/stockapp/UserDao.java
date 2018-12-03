@@ -4,10 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
-
 import java.util.List;
-
-import ee461l.stockapp.User;
 
 /**
  * Created by YongSub on 11/27/2018.
@@ -16,11 +13,14 @@ import ee461l.stockapp.User;
 @Dao
 public interface UserDao {
     @Insert
-    public void addUser(User user);
+    void addUser(User user);
 
     @Query("SELECT * FROM users")
-    public List<User> getUsers();
+    List<User> getUsers();
+
+    @Query("SELECT * FROM users WHERE id LIKE :id")
+   User getUser(String id);
 
     @Update
-    public void updateUser(User user);
+    void updateUser(User user);
 }

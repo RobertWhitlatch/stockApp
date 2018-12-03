@@ -41,6 +41,10 @@
             android:label="@string/search_stocks"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".SearchResultsDisplay"
+            android:label="@string/search_results"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".FinancialNews"
             android:label="@string/financial_news"
             android:theme="@style/AppTheme.NoActionBar" />

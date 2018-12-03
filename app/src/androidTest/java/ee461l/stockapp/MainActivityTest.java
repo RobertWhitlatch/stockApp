@@ -1,14 +1,8 @@
 package ee461l.stockapp;
 
-import android.app.Instrumentation;
-import android.content.Intent;
 import android.support.test.espresso.Espresso;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
-import android.widget.ImageButton;
-import android.widget.ListView;
-
-import static android.support.test.espresso.Espresso.onView;
 
 import org.junit.After;
 import org.junit.Before;
@@ -18,17 +12,13 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.action.ViewActions.typeTextIntoFocusedView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static ee461l.stockapp.Define.apiEndpoint;
-import static ee461l.stockapp.Define.requestCQNSC;
-import static org.hamcrest.Matchers.not;
+import static ee461l.stockapp.Define.*;
 import static org.junit.Assert.*;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
@@ -36,8 +26,9 @@ import static android.support.test.espresso.intent.matcher.IntentMatchers.hasCom
  * Created by YongSub on 11/30/2018.
  */
 public class MainActivityTest {
+
     @Rule
-    public ActivityTestRule<MainActivity> main = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> main = new ActivityTestRule<>(MainActivity.class);
 
     @Before
     public void setUp(){
@@ -136,9 +127,9 @@ public class MainActivityTest {
         Espresso.onView(withId(R.id.search_query)).perform(typeText("GOOGL"));
         Espresso.onView(withId(R.id.search_go)).perform(click());
 
-        Espresso.onView(withId(R.id.reset_search)).check(matches(isDisplayed()));
+        Espresso.onView(withId(R.id.go_back_search)).check(matches(isDisplayed()));
         Espresso.onView(withId(R.id.add_favorites)).check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.reset_search)).check(matches(isClickable()));
+        Espresso.onView(withId(R.id.go_back_search)).check(matches(isClickable()));
         Espresso.onView(withId(R.id.add_favorites)).check(matches(isClickable()));
 
     }
@@ -153,9 +144,9 @@ public class MainActivityTest {
 
     @Test
     public void StockAPITest() throws Exception {
-        SearchStocks.FetchStockResults fetchStock = new SearchStocks.FetchStockResults(null, null);
+        CallIEX fetchStock = new CallIEX("search");
         String searchText = "GOOGL";
-        Void result = fetchStock.execute(apiEndpoint + searchText + requestCQNSC).get();
+        Void result = fetchStock.execute(apiEndpoint + stockRequest + searchText + requestCQNSCLP).get();
         assertNotNull(SearchStocks.info);
     }
 
@@ -175,7 +166,7 @@ public class MainActivityTest {
         This tests if you can read our database
          */
         User user = new User();       // <-------- We added this user already in our Database
-        user.setId(1);
+        user.setId("1");
         user.setName("EE461L");
         List<String> favorite = new ArrayList<>();
         favorite.add("GOOGL");
@@ -183,7 +174,7 @@ public class MainActivityTest {
         List<User> userlist = MainActivity.appDataBase.dao().getUsers();
         User gotuser = new User();
         for(User u : userlist){
-            if(u.getId() == 1){
+            if(u.getId().equalsIgnoreCase("1")){
                 gotuser = u;
             }
         }

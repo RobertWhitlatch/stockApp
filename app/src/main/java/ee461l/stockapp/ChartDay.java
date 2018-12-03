@@ -2,18 +2,18 @@ package ee461l.stockapp;
 
 public class ChartDay {
 
-    private String date;
-    private double open;
-    private double high;
-    private double low;
-    private double close;
-    private long volume;
-    private long unadjustedVolume;
-    private double change;
-    private double changePercent;
-    private double vwap;
-    private String label;
-    private double changeOverTime;
+    private /*String*/ String date;
+    private /*double*/ String open;
+    private /*double*/ String high;
+    private /*double*/ String low;
+    private /*double*/ String close;
+    private /*long  */ String volume;
+    private /*long  */ String unadjustedVolume;
+    private /*double*/ String change;
+    private /*double*/ String changePercent;
+    private /*double*/ String vwap;
+    private /*String*/ String label;
+    private /*double*/ String changeOverTime;
 
     public String getDate() {
         return date;
@@ -23,75 +23,75 @@ public class ChartDay {
         this.date = date;
     }
 
-    public double getOpen() {
+    public String getOpen() {
         return open;
     }
 
-    public void setOpen(double open) {
+    public void setOpen(String open) {
         this.open = open;
     }
 
-    public double getHigh() {
+    public String getHigh() {
         return high;
     }
 
-    public void setHigh(double high) {
+    public void setHigh(String high) {
         this.high = high;
     }
 
-    public double getLow() {
+    public String getLow() {
         return low;
     }
 
-    public void setLow(double low) {
+    public void setLow(String low) {
         this.low = low;
     }
 
-    public double getClose() {
+    public String getClose() {
         return close;
     }
 
-    public void setClose(double close) {
+    public void setClose(String close) {
         this.close = close;
     }
 
-    public long getVolume() {
+    public String getVolume() {
         return volume;
     }
 
-    public void setVolume(long volume) {
+    public void setVolume(String volume) {
         this.volume = volume;
     }
 
-    public long getUnadjustedVolume() {
+    public String getUnadjustedVolume() {
         return unadjustedVolume;
     }
 
-    public void setUnadjustedVolume(int unadjustedVolume) {
+    public void setUnadjustedVolume(String unadjustedVolume) {
         this.unadjustedVolume = unadjustedVolume;
     }
 
-    public double getChange() {
+    public String getChange() {
         return change;
     }
 
-    public void setChange(double change) {
+    public void setChange(String change) {
         this.change = change;
     }
 
-    public double getChangePercent() {
+    public String getChangePercent() {
         return changePercent;
     }
 
-    public void setChangePercent(double changePercent) {
+    public void setChangePercent(String changePercent) {
         this.changePercent = changePercent;
     }
 
-    public double getVwap() {
+    public String getVwap() {
         return vwap;
     }
 
-    public void setVwap(double vwap) {
+    public void setVwap(String vwap) {
         this.vwap = vwap;
     }
 
@@ -103,11 +103,11 @@ public class ChartDay {
         this.label = label;
     }
 
-    public double getChangeOverTime() {
+    public String getChangeOverTime() {
         return changeOverTime;
     }
 
-    public void setChangeOverTime(double changeOverTime) {
+    public void setChangeOverTime(String changeOverTime) {
         this.changeOverTime = changeOverTime;
     }
 }

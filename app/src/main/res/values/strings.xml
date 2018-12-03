@@ -4,8 +4,11 @@
     <string name="bull_market">Bull Market</string>
     <string name="search_stocks">Search Stocks</string>
     <string name="search">Search</string>
+    <string name="search_results">Search Results</string>
+    <string name="bad_symbol">Invalid Symbol</string>
     <string name="add">Add to Favorites</string>
-    <string name="reset">Reset</string>
+    <string name="search_another">Search for another Stock</string>
+    <string name="logo">Company Logo</string>
     <string name="my_stocks">My Stocks</string>
     <string name="stock_details">Stock Details</string>
     <string name="todays_tidbits">Today\'s Tidbits</string>

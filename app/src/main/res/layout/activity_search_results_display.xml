@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchResultsDisplay">
+
+    <Button
+        android:id="@+id/go_back_search"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:layout_toStartOf="@+id/add_favorites"
+        android:onClick="goBackToSearch"
+        android:text="@string/search_another" />
+
+    <ImageButton
+        android:id="@+id/add_favorites"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/add"
+        android:onClick="addFavorite"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_results"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/go_back_search"
+        android:layout_margin="16dp" />
+
+</RelativeLayout>

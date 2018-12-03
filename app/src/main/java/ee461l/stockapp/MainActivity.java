@@ -15,6 +15,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static java.lang.Integer.parseInt;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     GoogleSignInClient mGoogleSignInClient;
@@ -38,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart(){
         super.onStart();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if(account != null){ //EDITED  (Maybe edge case?)
+        if(account != null){ //EDITED  (Maybe edge case?) // RESPONSE: It is guarded against in updateUI();
             current_account = account;
         }
         updateUI(account);
@@ -89,6 +94,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(account == null){
             return;
         }
+        String userId = account.getId();
+        User user = appDataBase.dao().getUser(userId);
+        if(user == null){ // EDIT: Changes tested, much simpler implementation possible with getUser();
+            user = new User();
+            user.setId(userId);
+            user.setName(account.getEmail());
+            user.setFavorites(new ArrayList<String>());
+            appDataBase.dao().addUser(user);
+        }
+
         TextView tv = findViewById(R.id.user_greeting);
         String name = account.getGivenName();
         if(name == null){
