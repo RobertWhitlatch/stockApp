@@ -26,6 +26,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static ee461l.stockapp.Define.*;
+import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.*;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
@@ -57,22 +58,22 @@ public class MainActivityTest {
     @Test
     public void DisplayTest() throws Exception {
 
-        /*We probably want to test if those buttons are displayed when the user is not logged in
-        ex)
+
         if(MainActivity.current_account.getAccount() != null){
             Espresso.onView(withId(R.id.search_stocks)).check(matches(isDisplayed()));
+            Espresso.onView(withId(R.id.my_stocks)).check(matches(isDisplayed()));
+            Espresso.onView(withId(R.id.todays_tidbits)).check(matches(isDisplayed()));
+            Espresso.onView(withId(R.id.financial_news)).check(matches(isDisplayed()));
         }else{
             Espresso.onView(withId(R.id.search_stocks)).check(matches(not(isDisplayed())));
+            Espresso.onView(withId(R.id.my_stocks)).check(matches(not(isDisplayed())));
+            Espresso.onView(withId(R.id.todays_tidbits)).check(matches(not(isDisplayed())));
+            Espresso.onView(withId(R.id.financial_news)).check(matches(not(isDisplayed())));
         }
-        */
 
         /*
         This test checks if all the buttons are displayed on the landing page
          */
-        Espresso.onView(withId(R.id.search_stocks)).check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.my_stocks)).check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.todays_tidbits)).check(matches(isDisplayed()));
-        Espresso.onView(withId(R.id.financial_news)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -150,14 +151,6 @@ public class MainActivityTest {
     }
 
     @Test
-    public void SearchStockSearchEdgeCase() throws Exception {
-        /*
-        We might want to test if search button does something witl null input text or any stock symbol that does not exist
-         */
-
-    }
-
-    @Test
     public void StockAPITest() throws Exception {
         CallIEX fetchStock = new CallIEX("search");
         String searchText = "GOOGL";
@@ -181,7 +174,7 @@ public class MainActivityTest {
         This tests if you can read our database
          */
         User user = new User();       // <-------- We added this user already in our Database
-        user.setId("1");
+        user.setId(MainActivity.current_account.getId());
         user.setName("EE461L");
         List<String> favorite = new ArrayList<>();
         favorite.add("GOOGL");
@@ -189,11 +182,10 @@ public class MainActivityTest {
         List<User> userlist = MainActivity.appDataBase.dao().getUsers();
         User gotuser = new User();
         for(User u : userlist){
-            if(u.getId().equalsIgnoreCase("1")){
+            if(u.getId().equalsIgnoreCase(user.getId())){
                 gotuser = u;
             }
         }
         assertEquals(user.getFavorites(), gotuser.getFavorites());
     }
-
 }
