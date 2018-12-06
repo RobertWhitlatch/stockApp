@@ -9,8 +9,14 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -152,12 +158,12 @@ public class MainActivityTest {
 
     @Test
     public void NewsAPITest() throws Exception {
-
-    }
-
-    @Test
-    public void BingSearchAPITest() throws Exception {
-
+        URL url = new URL(BingNewsSearch.host + BingNewsSearch.path + "?q=" +  URLEncoder.encode("stock market", "UTF-8"));
+        HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
+        connection.setRequestProperty("Ocp-Apim-Subscription-Key", BingNewsSearch.subscriptionKey);
+        InputStream stream = connection.getInputStream();
+        String response = new Scanner(stream).useDelimiter("\\A").next();
+        assertNotNull(response);
     }
 
     @Test
