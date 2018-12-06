@@ -19,6 +19,7 @@ import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
 
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
@@ -95,6 +96,14 @@ public class MainActivityTest {
     }
 
     @Test
+    public void DoesSearchButtonWork() throws Exception {
+        Espresso.onView(withId(R.id.search_stocks)).perform(click());
+        Espresso.onView(withId(R.id.search_query)).perform(typeText("GOOGL"), closeSoftKeyboard());
+        Espresso.onView(withId(R.id.search_go)).perform(click());
+        intended(hasComponent(SearchResultsDisplay.class.getName()));
+    }
+
+    @Test
     public void DoesFavoritePageLoad() throws Exception {
         /*
         This test checks if Favorite page intent is able to be launched
@@ -130,7 +139,7 @@ public class MainActivityTest {
         We might want to test if there are needed information(i.e stock symbol, graph, stock value etc.) on individual stock page after we implement individual stock page
          */
         Espresso.onView(withId(R.id.search_stocks)).perform(click());
-        Espresso.onView(withId(R.id.search_query)).perform(typeText("GOOGL"));
+        Espresso.onView(withId(R.id.search_query)).perform(typeText("GOOGL"), closeSoftKeyboard());
         Espresso.onView(withId(R.id.search_go)).perform(click());
 
         Espresso.onView(withId(R.id.go_back_search)).check(matches(isDisplayed()));
