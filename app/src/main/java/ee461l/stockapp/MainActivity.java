@@ -16,6 +16,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static ee461l.stockapp.Define.apiEndpoint;
 import static ee461l.stockapp.Define.requestCQNSCLP;
@@ -136,13 +137,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void gotoMyStocks(View v){
-        symbols = currentUser.getFavorites();
-        logoURLs = new String[symbols.size()];
-        favorites = new SearchInfo[symbols.size()];
-        for(int i = 0; i < symbols.size(); i++){
+        List<String> symbolList = currentUser.getFavorites();
+        symbols = new String[symbolList.size()];
+        symbolList.toArray(symbols);
+        logoURLs = new String[symbolList.size()];
+        favorites = new SearchInfo[symbolList.size()];
+        for(int i = 0; i < symbolList.size(); i++){
             CallIEX fetchFavorite = new CallIEX("favorites" , i);
             try {
-                Object obj = fetchFavorite.execute(apiEndpoint + stockRequest + symbols.get(i) + requestCQNSCLP).get();
+                Object obj = fetchFavorite.execute(apiEndpoint + stockRequest + symbolList.get(i) + requestCQNSCLP).get();
                 logoURLs[i] = favorites[i].getLogo().getUrl();
             } catch (Exception e) {
                 e.printStackTrace();
