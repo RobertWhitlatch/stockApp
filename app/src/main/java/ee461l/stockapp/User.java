@@ -34,6 +34,23 @@ public class User {
         this.favorites = favorites;
     }
 
+    public boolean isFavorite(String query){
+        String cleanQuery = query.toUpperCase();
+        return favorites.contains(cleanQuery);
+    }
+
+    public void addFavorite(String fav){
+        String cleanFav = fav.toUpperCase();
+        if(!favorites.contains(cleanFav)){
+            favorites.add(cleanFav);
+        }
+    }
+
+    public void removeFavorite(String fav){
+        String cleanFav = fav.toUpperCase();
+        favorites.remove(cleanFav);
+    }
+
     @NonNull
     public String getId() {
         return id;

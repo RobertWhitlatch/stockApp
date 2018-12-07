@@ -16,15 +16,21 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static java.lang.Integer.parseInt;
+import static ee461l.stockapp.Define.apiEndpoint;
+import static ee461l.stockapp.Define.requestCQNSCLP;
+import static ee461l.stockapp.Define.stockRequest;
+import static ee461l.stockapp.FavoritesList.favorites;
+import static ee461l.stockapp.FavoritesList.symbols;
+import static ee461l.stockapp.FavoritesList.logoURLs;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     GoogleSignInClient mGoogleSignInClient;
     public static GoogleSignInAccount current_account; //EDITED
     public static AppDataBase appDataBase; //EDITED
+    public static User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         appDataBase = Room.databaseBuilder(getApplicationContext(), AppDataBase.class, "userdb").allowMainThreadQueries().build(); //EDITED
+
     }
 
     @Override
@@ -94,14 +101,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(account == null){
             return;
         }
+
         String userId = account.getId();
-        User user = appDataBase.dao().getUser(userId);
-        if(user == null){ // EDIT: Changes tested, much simpler implementation possible with getUser();
-            user = new User();
-            user.setId(userId);
-            user.setName(account.getEmail());
-            user.setFavorites(new ArrayList<String>());
-            appDataBase.dao().addUser(user);
+
+        currentUser = appDataBase.dao().getUser(userId);
+        if(currentUser == null){
+            currentUser = new User();
+            currentUser.setId(userId);
+            currentUser.setName(account.getEmail());
+            currentUser.setFavorites(new ArrayList<String>());
+            appDataBase.dao().addUser(currentUser);
         }
 
         TextView tv = findViewById(R.id.user_greeting);
@@ -127,7 +136,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void gotoMyStocks(View v){
-        Intent intent = new Intent(getApplicationContext(), StockListActivity.class);
+        symbols = currentUser.getFavorites();
+        logoURLs = new String[symbols.size()];
+        favorites = new SearchInfo[symbols.size()];
+        for(int i = 0; i < symbols.size(); i++){
+            CallIEX fetchFavorite = new CallIEX("favorites" , i);
+            try {
+                Object obj = fetchFavorite.execute(apiEndpoint + stockRequest + symbols.get(i) + requestCQNSCLP).get();
+                logoURLs[i] = favorites[i].getLogo().getUrl();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        Intent intent = new Intent(getApplicationContext(), FavoritesList.class);
         startActivity(intent);
     }
 

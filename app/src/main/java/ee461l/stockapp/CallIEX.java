@@ -7,14 +7,21 @@ import com.google.gson.Gson;
 
 import static ee461l.stockapp.SearchStocks.terms;
 import static ee461l.stockapp.SearchStocks.info;
+import static ee461l.stockapp.FavoritesList.favorites;
 
 //Changed it to public to Test
 public class CallIEX extends AsyncTask<String,Void,Void> {
 
     private String mode;
+    private int index;
 
     public CallIEX(String mode){
         this.mode = mode;
+    }
+
+    public CallIEX(String mode, int index){
+        this.mode = mode;
+        this.index = index;
     }
 
     @Override
@@ -28,6 +35,8 @@ public class CallIEX extends AsyncTask<String,Void,Void> {
                 terms.setRefData(ref);
             } else if(mode.equalsIgnoreCase("search")) {
                 info = gson.fromJson(jsonStr, SearchInfo.class);
+            } else if(mode.equalsIgnoreCase("favorites")) {
+                favorites[index] = gson.fromJson(jsonStr, SearchInfo.class);
             }
         }
         return null;

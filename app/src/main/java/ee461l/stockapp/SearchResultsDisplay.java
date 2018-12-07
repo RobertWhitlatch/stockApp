@@ -7,31 +7,27 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
-import java.util.List;
 
+import static ee461l.stockapp.MainActivity.appDataBase;
+import static ee461l.stockapp.MainActivity.currentUser;
 import static ee461l.stockapp.SearchStocks.info;
 
 public class SearchResultsDisplay extends AppCompatActivity {
 
     private ImageButton favorite;
-    private User currentUser;
-    private List<String> favoritesList;
-    private RecyclerView resultsView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results_display);
 
-        String userId = MainActivity.current_account.getId();
-        currentUser = MainActivity.appDataBase.dao().getUser(userId);
+
         favorite = findViewById(R.id.add_favorites);
-        favoritesList = currentUser.getFavorites();
-        if(favoritesList.contains(info.getSymbol().toUpperCase())){
+        if(currentUser.isFavorite(info.getSymbol())){
             favorite.setImageResource(android.R.drawable.btn_star_big_on);
         }
 
-        resultsView = findViewById(R.id.search_results);
+        RecyclerView resultsView = findViewById(R.id.search_results);
         resultsView.setLayoutManager(new LinearLayoutManager(this));
         resultsView.setAdapter(new StockDisplayAdapter(info.getDisplaySet()));
     }
@@ -42,13 +38,15 @@ public class SearchResultsDisplay extends AppCompatActivity {
     }
 
     public void addFavorite(View v){
-        String newFavoriteSymbol = info.getSymbol().toUpperCase();
-        if(favoritesList.contains(newFavoriteSymbol.toUpperCase())){
+        String newFavoriteSymbol = info.getSymbol();
+        //currentFireUser.addFavorite(newFavoriteSymbol);
+        //FireDB.storeUser(currentFireUser);
+        if(currentUser.isFavorite(newFavoriteSymbol)){
             return;
         }
         favorite.setImageResource(android.R.drawable.btn_star_big_on);
-        favoritesList.add(newFavoriteSymbol);
-        currentUser.setFavorites(favoritesList);
-        MainActivity.appDataBase.dao().updateUser(currentUser);
+        currentUser.addFavorite(newFavoriteSymbol);
+        appDataBase.dao().updateUser(currentUser);
     }
+
 }

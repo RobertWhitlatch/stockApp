@@ -10,7 +10,6 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -24,19 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".StockListActivity"
-            android:label="@string/my_stocks"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StockDetailActivity"
-            android:label="@string/stock_details"
-            android:parentActivityName=".StockListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ee461l.stockapp.StockListActivity" />
-        </activity>
         <activity
             android:name=".SearchStocks"
             android:label="@string/search_stocks"
@@ -52,6 +38,10 @@
         <activity
             android:name=".TodaysTidbits"
             android:label="@string/todays_tidbits"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FavoritesList"
+            android:label="@string/favorites_list"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

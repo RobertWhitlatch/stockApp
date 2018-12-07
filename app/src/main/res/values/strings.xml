@@ -9,7 +9,7 @@
     <string name="add">Add to Favorites</string>
     <string name="search_another">Search for another Stock</string>
     <string name="logo">Company Logo</string>
-    <string name="my_stocks">My Stocks</string>
+    <string name="favorites_list">Favorites</string>
     <string name="stock_details">Stock Details</string>
     <string name="todays_tidbits">Today\'s Tidbits</string>
     <string name="financial_news">Financial News</string>
