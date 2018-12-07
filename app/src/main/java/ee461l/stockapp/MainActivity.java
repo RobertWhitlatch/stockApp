@@ -112,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             currentUser.setName(account.getEmail());
             currentUser.setFavorites(new ArrayList<String>());
             appDataBase.dao().addUser(currentUser);
+        }else if(currentUser.getFavorites() != null && currentUser.getFavorites().size() != 0){
+            currentUser.sortFavorites();
+            appDataBase.dao().updateUser(currentUser);
         }
 
         TextView tv = findViewById(R.id.user_greeting);
@@ -126,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv.setText(text);
         findViewById(R.id.sign_in_button).setVisibility(View.INVISIBLE);
         findViewById(R.id.search_stocks).setVisibility(View.VISIBLE);
-        findViewById(R.id.my_stocks).setVisibility(View.VISIBLE);
+        findViewById(R.id.my_favorites).setVisibility(View.VISIBLE);
         findViewById(R.id.todays_tidbits).setVisibility(View.VISIBLE);
         findViewById(R.id.financial_news).setVisibility(View.VISIBLE);
     }
@@ -136,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public void gotoMyStocks(View v){
+    public void gotoFavorites(View v){
         List<String> symbolList = currentUser.getFavorites();
         symbols = new String[symbolList.size()];
         symbolList.toArray(symbols);

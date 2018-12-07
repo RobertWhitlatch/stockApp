@@ -14,15 +14,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".LandingPage">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".LandingPage"
+            android:label="@string/landing_page"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/main"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SearchStocks"
             android:label="@string/search_stocks"
@@ -42,6 +48,10 @@
         <activity
             android:name=".FavoritesList"
             android:label="@string/favorites_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FavoriteDisplay"
+            android:label="@string/fav_display"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

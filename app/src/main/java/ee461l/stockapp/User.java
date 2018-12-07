@@ -6,6 +6,8 @@ import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -49,6 +51,10 @@ public class User {
     public void removeFavorite(String fav){
         String cleanFav = fav.toUpperCase();
         favorites.remove(cleanFav);
+    }
+
+    public void sortFavorites(){
+        Collections.sort(favorites);
     }
 
     @NonNull

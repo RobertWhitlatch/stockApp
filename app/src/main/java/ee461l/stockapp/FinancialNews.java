@@ -65,7 +65,6 @@ public class FinancialNews extends AppCompatActivity {
             }
             catch (Exception e) {
                 e.printStackTrace(System.out);
-                System.out.println(e);
             }
             return bitmapList;
         }
@@ -77,7 +76,7 @@ public class FinancialNews extends AppCompatActivity {
             textView3.setMovementMethod(LinkMovementMethod.getInstance());
 
             for(int i = 0; i < urlList.size(); i++) {
-                textViewList.get(i).setText(Html.fromHtml(urlList.get(i)));
+                textViewList.get(i).setText(Html.fromHtml(urlList.get(i), Html.FROM_HTML_MODE_LEGACY));
 //                textViewList.get(i).setY(250 + (i*400));
 //                textViewList.get(i).setX(700);
 

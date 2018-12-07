@@ -61,12 +61,12 @@ public class MainActivityTest {
 
         if(MainActivity.current_account.getAccount() != null){
             Espresso.onView(withId(R.id.search_stocks)).check(matches(isDisplayed()));
-            Espresso.onView(withId(R.id.my_stocks)).check(matches(isDisplayed()));
+            Espresso.onView(withId(R.id.my_favorites)).check(matches(isDisplayed()));
             Espresso.onView(withId(R.id.todays_tidbits)).check(matches(isDisplayed()));
             Espresso.onView(withId(R.id.financial_news)).check(matches(isDisplayed()));
         }else{
             Espresso.onView(withId(R.id.search_stocks)).check(matches(not(isDisplayed())));
-            Espresso.onView(withId(R.id.my_stocks)).check(matches(not(isDisplayed())));
+            Espresso.onView(withId(R.id.my_favorites)).check(matches(not(isDisplayed())));
             Espresso.onView(withId(R.id.todays_tidbits)).check(matches(not(isDisplayed())));
             Espresso.onView(withId(R.id.financial_news)).check(matches(not(isDisplayed())));
         }
@@ -82,7 +82,7 @@ public class MainActivityTest {
         This test checks if all the button on the ladning page are clickable
          */
         Espresso.onView(withId(R.id.search_stocks)).check(matches(isClickable()));
-        Espresso.onView(withId(R.id.my_stocks)).check(matches(isClickable()));
+        Espresso.onView(withId(R.id.my_favorites)).check(matches(isClickable()));
         Espresso.onView(withId(R.id.todays_tidbits)).check(matches(isClickable()));
         Espresso.onView(withId(R.id.financial_news)).check(matches(isClickable()));
     }
@@ -109,8 +109,8 @@ public class MainActivityTest {
         /*
         This test checks if Favorite page intent is able to be launched
          */
-        Espresso.onView(withId(R.id.my_stocks)).perform(click());
-        intended(hasComponent(StockListActivity.class.getName()));
+        Espresso.onView(withId(R.id.my_favorites)).perform(click());
+        intended(hasComponent(FavoritesList.class.getName()));
 
     }
 
