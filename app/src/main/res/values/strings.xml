@@ -15,7 +15,8 @@
     <string name="back_to_fav_list">Back to Favorites</string>
     <string name="remove">Remove from Favorites</string>
     <string name="fav_display">Favorite Display</string>
-    <string name="todays_tidbits">Today\'s Tidbits</string>
+    <string name="crypto">Crypto Currencies</string>
+    <string name="crypto_list">Crypto Currency List</string>
     <string name="financial_news">Financial News</string>
     <string name="action_settings">Settings</string>
     <string name="large_text">

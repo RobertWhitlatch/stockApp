@@ -18,7 +18,7 @@
         <activity
             android:name=".LandingPage"
             android:label="@string/landing_page"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,10 +42,6 @@
             android:label="@string/financial_news"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TodaysTidbits"
-            android:label="@string/todays_tidbits"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".FavoritesList"
             android:label="@string/favorites_list"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -53,6 +49,8 @@
             android:name=".FavoriteDisplay"
             android:label="@string/fav_display"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CryptoList" />
+        <activity android:name=".CryptoDisplay"></activity>
     </application>
 
 </manifest>

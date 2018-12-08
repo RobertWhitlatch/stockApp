@@ -17,10 +17,9 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-import static ee461l.stockapp.Define.apiEndpoint;
-import static ee461l.stockapp.Define.requestCQNSCLP;
-import static ee461l.stockapp.Define.stockRequest;
+import static ee461l.stockapp.Define.*;
 import static ee461l.stockapp.FavoritesList.favorites;
 import static ee461l.stockapp.FavoritesList.symbols;
 import static ee461l.stockapp.FavoritesList.logoURLs;
@@ -130,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.sign_in_button).setVisibility(View.INVISIBLE);
         findViewById(R.id.search_stocks).setVisibility(View.VISIBLE);
         findViewById(R.id.my_favorites).setVisibility(View.VISIBLE);
-        findViewById(R.id.todays_tidbits).setVisibility(View.VISIBLE);
+        findViewById(R.id.crypto).setVisibility(View.VISIBLE);
         findViewById(R.id.financial_news).setVisibility(View.VISIBLE);
     }
 
@@ -158,8 +157,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    public void gotoTodaysTidbits(View v){
-        Intent intent = new Intent(getApplicationContext(), TodaysTidbits.class);
+    public void gotoCryptoList(View v){
+        CallIEX fetchCrypto = new CallIEX("crypto");
+        try {
+            Object obj = fetchCrypto.execute(apiEndpoint + requestCrypto).get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Intent intent = new Intent(getApplicationContext(), CryptoList.class);
         startActivity(intent);
     }
 
