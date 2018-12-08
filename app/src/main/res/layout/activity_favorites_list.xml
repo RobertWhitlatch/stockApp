@@ -21,10 +21,22 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:clipToPadding="false"
+            android:paddingTop="96dp"
             app:layoutManager="LinearLayoutManager"
             tools:context=".FavoritesList"
             tools:listitem="@layout/favorites_view_holder" />
 
     </FrameLayout>
+
+    <Button
+        android:id="@+id/favorites_list_go_home"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:textSize="12sp"
+        android:onClick="gotoHome"
+        android:text="@string/main" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -40,6 +40,11 @@ public class FavoriteDisplay extends AppCompatActivity {
         appDataBase.dao().updateUser(currentUser);
     }
 
+    public void gotoHome(View v){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
     public void goBackToFavorites(View v){
         List<String> symbolList = currentUser.getFavorites();
         symbols = new String[symbolList.size()];

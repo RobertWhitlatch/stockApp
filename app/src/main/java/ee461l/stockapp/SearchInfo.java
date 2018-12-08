@@ -14,8 +14,8 @@ public class SearchInfo {
         String[] set = new String[30];
         int i = 0;
         set[i++] = logo.getUrl();
-        set[i++] = "Description: " + company.getDescription();
         set[i++] = "Price: " + price;
+        set[i++] = "Description: " + company.getDescription();
         set[i++] = "Primary Exchange: " + quote.getPrimaryExchange();
         set[i++] = "Open: " + chart[chart.length-1].getOpen();
         set[i++] = "Close: " + chart[chart.length-1].getClose();

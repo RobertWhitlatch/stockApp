@@ -25,6 +25,15 @@
         android:onClick="executeSearch"
         android:text="@string/search" />
 
+    <Button
+        android:id="@+id/search_back"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:layout_below="@id/search_go"
+        android:onClick="gotoHome"
+        android:text="@string/main" />
+
     <TextView
         android:id="@+id/invalid_symbol"
         android:layout_width="match_parent"

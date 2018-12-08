@@ -46,4 +46,9 @@ public class SearchStocks extends AppCompatActivity {
         }
     }
 
+    public void gotoHome(View v){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
 }

@@ -37,6 +37,11 @@ public class SearchResultsDisplay extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoHome(View v){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+
     public void addFavorite(View v){
         String newFavoriteSymbol = info.getSymbol();
         //currentFireUser.addFavorite(newFavoriteSymbol);
