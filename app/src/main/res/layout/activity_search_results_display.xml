@@ -40,12 +40,19 @@
         android:onClick="addFavorite"
         app:srcCompat="@android:drawable/btn_star_big_off" />
 
+    <com.jjoe64.graphview.GraphView
+        android:layout_below="@+id/add_favorites"
+
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/graph" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/search_results"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/go_back_search"
+        android:layout_below="@+id/graph"
         android:layout_margin="16dp" />
 
 </RelativeLayout>

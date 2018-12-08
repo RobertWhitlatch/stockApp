@@ -29,6 +29,7 @@
         android:onClick="goBackToFavorites"
         android:text="@string/favorites_list" />
 
+
     <ImageButton
         android:id="@+id/remove_favorites"
         android:layout_width="64dp"
@@ -40,12 +41,21 @@
         android:onClick="removeFavorite"
         app:srcCompat="@android:drawable/ic_delete" />
 
+    <com.jjoe64.graphview.GraphView
+        android:layout_below="@+id/remove_favorites"
+
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/graph" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/favorite_display"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/go_back_favorites"
-        android:layout_margin="16dp" />
+        android:layout_below="@+id/graph"
+        android:layout_margin="16dp"
+
+        />
 
 </RelativeLayout>

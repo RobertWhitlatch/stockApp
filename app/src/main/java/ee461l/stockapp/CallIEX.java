@@ -15,11 +15,9 @@ public class CallIEX extends AsyncTask<String,Void,Void> {
 
     private String mode;
     private int index;
-
     public CallIEX(String mode){
         this.mode = mode;
     }
-
     public CallIEX(String mode, int index){
         this.mode = mode;
         this.index = index;
@@ -42,6 +40,7 @@ public class CallIEX extends AsyncTask<String,Void,Void> {
                 Crypto[] ref = gson.fromJson(jsonStr, Crypto[].class);
                 cryptoInfo.setCrypto(ref);
             }
+
         }
         return null;
     }
