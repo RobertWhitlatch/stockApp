@@ -33,13 +33,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/todays_tidbits"
+        android:id="@+id/crypto"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:onClick="gotoTodaysTidbits"
-        android:text="@string/todays_tidbits"
+        android:onClick="gotoCryptoList"
+        android:text="@string/crypto"
         android:textAlignment="center"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"

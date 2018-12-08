@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import com.google.gson.Gson;
 
 
+import static ee461l.stockapp.CryptoList.cryptoInfo;
 import static ee461l.stockapp.SearchStocks.terms;
 import static ee461l.stockapp.SearchStocks.info;
 import static ee461l.stockapp.FavoritesList.favorites;
@@ -37,6 +38,9 @@ public class CallIEX extends AsyncTask<String,Void,Void> {
                 info = gson.fromJson(jsonStr, SearchInfo.class);
             } else if(mode.equalsIgnoreCase("favorites")) {
                 favorites[index] = gson.fromJson(jsonStr, SearchInfo.class);
+            } else if(mode.equalsIgnoreCase("crypto")) {
+                Crypto[] ref = gson.fromJson(jsonStr, Crypto[].class);
+                cryptoInfo.setCrypto(ref);
             }
         }
         return null;

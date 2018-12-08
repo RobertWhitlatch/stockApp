@@ -5,4 +5,5 @@ final class Define {
     final static String symbolRequest = "/ref-data/symbols";
     final static String stockRequest = "/stock/";
     final static String requestCQNSCLP = "/batch?types=company,quote,news,stats,chart,logo,price";
+    final static String requestCrypto = "/stock/market/crypto";
 }
