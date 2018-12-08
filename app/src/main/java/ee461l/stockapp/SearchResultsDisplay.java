@@ -48,8 +48,8 @@ public class SearchResultsDisplay extends AppCompatActivity {
         String[] dateWeek = info.getWeekofDates();
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
-        Date[] dateArray = new Date[7];
-        for(int i = 0; i < 7; i++) {
+        Date[] dateArray = new Date[10];
+        for(int i = 0; i < 10; i++) {
             try {
                 Date startDate;
                 startDate = df.parse(dateWeek[i]);
@@ -62,6 +62,9 @@ public class SearchResultsDisplay extends AppCompatActivity {
             }
         }
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(dateArray[9], dataWeek[9]),
+                new DataPoint(dateArray[8], dataWeek[8]),
+                new DataPoint(dateArray[7], dataWeek[7]),
                 new DataPoint(dateArray[6], dataWeek[6]),
                 new DataPoint(dateArray[5], dataWeek[5]),
                 new DataPoint(dateArray[4], dataWeek[4]),
@@ -74,14 +77,15 @@ public class SearchResultsDisplay extends AppCompatActivity {
         graph.addSeries(series);
         // set date label formatter
         graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(this));
-        graph.getGridLabelRenderer().setNumHorizontalLabels(5); // only 7 because of the space
+        graph.getGridLabelRenderer().setNumHorizontalLabels(7); // only 7 because of the space
 
         // set manual x bounds to have nice steps
-        graph.getViewport().setMinX(dateArray[6].getTime());
+        graph.getViewport().setMinX(dateArray[9].getTime());
         graph.getViewport().setMaxX(dateArray[0].getTime());
         graph.getViewport().setXAxisBoundsManual(true);
 
         graph.getGridLabelRenderer().setHumanRounding(false);
+        graph.getGridLabelRenderer().setHorizontalLabelsAngle(30);
 
     }
 

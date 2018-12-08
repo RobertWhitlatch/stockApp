@@ -12,17 +12,17 @@ public class SearchInfo {
 
 
     public double[] getWeekofData(){
-        double[] week = new double[7];
+        double[] week = new double[10];
         //int index = 0;
-        for(int i = 0; i< 7; i++){
+        for(int i = 0; i< 10; i++){
             week[i] = Double.parseDouble(chart[chart.length-1-i].getClose());
         }
         return week;
     }
     public String[] getWeekofDates(){
-        String[] week = new String[7];
+        String[] week = new String[10];
         //int index = 0;
-        for(int i = 0; i< 7; i++){
+        for(int i = 0; i< 10; i++){
             week[i] = chart[chart.length-1-i].getDate();
         }
         return week;
