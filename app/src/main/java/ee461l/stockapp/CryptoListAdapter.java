@@ -14,7 +14,7 @@ public class CryptoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         @Override
         public void onClick(View view) {
             Context context = view.getContext();
-            Intent intent = new Intent(context, FavoriteDisplay.class);
+            Intent intent = new Intent(context, CryptoDisplay.class);
             Integer position = (Integer) view.getTag();
             intent.putExtra("position", position);
             context.startActivity(intent);

@@ -8,8 +8,7 @@ import android.view.View;
 
 public class CryptoList extends AppCompatActivity {
 
-    public static CryptoInfo cryptoInfo;
-    public static String[] cryptoList;
+    public static volatile CryptoInfo cryptoInfo = new CryptoInfo();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

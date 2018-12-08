@@ -11,7 +11,7 @@ public class SearchInfo {
     private /*double*/ String price;
 
     public String[] getDisplaySet(){
-        String[] set = new String[30];
+        String[] set = new String[16+news.length];
         int i = 0;
         set[i++] = logo.getUrl();
         set[i++] = "Price: " + price;
@@ -30,9 +30,6 @@ public class SearchInfo {
         set[i++] = "Gross Profit: " + stats.getGrossProfit();
         set[i++] = "Cash: " + stats.getCash();
         for(News paper : news){
-            if(i == news.length){
-                break;
-            }
             set[i++] = "Headline: " + paper.getHeadline();
         }
         return set;

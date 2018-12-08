@@ -48,7 +48,7 @@ public class Crypto {
     private String askSize;
 
     public String[] getDisplaySet(){
-        String[] displaySet = new String[20];
+        String[] displaySet = new String[15];
         int i = 0;
         displaySet[i++] = "Symbol: " + symbol;
         displaySet[i++] = "Company Name: " + companyName;
@@ -64,7 +64,7 @@ public class Crypto {
         displaySet[i++] = "Bid Price: " + bidPrice;
         displaySet[i++] = "Bid Size: " + bidSize;
         displaySet[i++] = "Ask Price: " + askPrice;
-        displaySet[i++] = "Ask Size: " + askSize;
+        displaySet[i] = "Ask Size: " + askSize;
         return displaySet;
     }
 
