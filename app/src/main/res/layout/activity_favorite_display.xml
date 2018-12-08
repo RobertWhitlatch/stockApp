@@ -29,6 +29,7 @@
         android:onClick="goBackToFavorites"
         android:text="@string/favorites_list" />
 
+
     <ImageButton
         android:id="@+id/remove_favorites"
         android:layout_width="64dp"
@@ -45,7 +46,9 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/go_back_favorites"
-        android:layout_margin="16dp" />
+        android:layout_below="@+id/remove_favorites"
+        android:layout_margin="16dp"
+
+        />
 
 </RelativeLayout>

@@ -10,6 +10,23 @@ public class SearchInfo {
     private Logo logo;
     private /*double*/ String price;
 
+
+    public double[] getWeekofData(){
+        double[] week = new double[7];
+        //int index = 0;
+        for(int i = 0; i< 7; i++){
+            week[i] = Double.parseDouble(chart[chart.length-1-i].getClose());
+        }
+        return week;
+    }
+    public String[] getWeekofDates(){
+        String[] week = new String[7];
+        //int index = 0;
+        for(int i = 0; i< 7; i++){
+            week[i] = chart[chart.length-1-i].getDate();
+        }
+        return week;
+    }
     public String[] getDisplaySet(){
         String[] set = new String[30];
         int i = 0;

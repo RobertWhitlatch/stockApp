@@ -37,4 +37,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation 'com.jjoe64:graphview:4.2.2'
+
 }
