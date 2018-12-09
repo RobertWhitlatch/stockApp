@@ -109,11 +109,11 @@ public class BingNewsSearch {
         String htmlForm = "";
         ArrayList<String> urlList = new ArrayList<String>();
         int articleNum = 0;
-        if(docJson.size()<5){
+        if(docJson.size()<10){
             articleNum = docJson.size();
         }
         else{
-            articleNum = 5;
+            articleNum = 10;
         }
         for(int i = 0; i < articleNum; i++){
             JsonElement obj = docJson.get(i);
@@ -137,11 +137,11 @@ public class BingNewsSearch {
         String images = "";
         ArrayList<String> imageList = new ArrayList<String>();
         int articleNum = 0;
-        if(docJson.size()<5){
+        if(docJson.size()<10){
             articleNum = docJson.size();
         }
         else{
-            articleNum = 5;
+            articleNum = 10;
         }
         for(int i = 0; i < articleNum; i++){
             JsonElement obj = docJson.get(i);

@@ -6,58 +6,19 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".FinancialNews"
+    android:fillViewport="true"
     tools:showIn="@layout/activity_financial_news">
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".NewsActivity"
-        android:columnCount="2"
-        android:rowCount="5">
+        tools:context=".FinancialNews">
 
-        <ImageView
-            android:id="@+id/news_image1"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
+        <ListView
+            android:id="@+id/newsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-        <TextView
-            android:id="@+id/newsi_text1"
-            android:linksClickable="true"
-            android:textSize="20sp" />
-
-        <ImageView
-            android:id="@+id/news_image2"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
-
-        <TextView
-            android:id="@+id/newsi_text2"
-            android:linksClickable="true"
-            android:textSize="20sp" />
-        <ImageView
-            android:id="@+id/news_image3"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
-        <TextView
-            android:id="@+id/newsi_text3"
-            android:linksClickable="true"
-            android:textSize="20sp"/>
-        <ImageView
-            android:id="@+id/news_image4"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
-        <TextView
-            android:id="@+id/newsi_text4"
-            android:linksClickable="true"
-            android:textSize="20sp"/>
-        <ImageView
-            android:id="@+id/news_image5"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
-        <TextView
-            android:id="@+id/newsi_text5"
-            android:linksClickable="true"
-            android:textSize="20sp"/>
-    </GridLayout>
+    </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
