@@ -19,6 +19,7 @@
     <string name="crypto_list">Crypto Currency List</string>
     <string name="crypto_display">Crypto Currency Details</string>
     <string name="financial_news">Financial News</string>
+    <string name="mitchells_news">Mitchell\'s News</string>
     <string name="news_link">Go to Article</string>
     <string name="action_settings">Settings</string>
     <string name="sentiment">Sentiment is neutral</string>

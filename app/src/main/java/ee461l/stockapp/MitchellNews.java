@@ -13,7 +13,7 @@ public class MitchellNews extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_financial_news);
+        setContentView(R.layout.activity_mitchell_news);
 
         RecyclerView resultsView = findViewById(R.id.news_list);
         resultsView.setAdapter(new MitchellNewsListAdapter(newsInfo.getArticles()));

@@ -3,7 +3,7 @@ package ee461l.stockapp;
 import android.os.AsyncTask;
 import com.google.gson.Gson;
 
-import static ee461l.stockapp.FinancialNews.newsInfo;
+import static ee461l.stockapp.MitchellNews.newsInfo;
 
 public class CallNewsApi extends AsyncTask<String,Void,Void> {
 

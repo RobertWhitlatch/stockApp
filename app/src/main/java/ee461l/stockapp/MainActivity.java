@@ -131,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.my_favorites).setVisibility(View.VISIBLE);
         findViewById(R.id.crypto).setVisibility(View.VISIBLE);
         findViewById(R.id.financial_news).setVisibility(View.VISIBLE);
+        findViewById(R.id.mitchell_news).setVisibility(View.VISIBLE);
     }
 
     public void gotoSearchStocks(View v){
