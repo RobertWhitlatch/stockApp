@@ -1,7 +1,9 @@
 package ee461l.stockapp;
 
 public class Document {
-    public String id, language, text;
+    public String id;
+    public String language;
+    public String text;
 
     public Document(String id, String language, String text){
         this.id = id;

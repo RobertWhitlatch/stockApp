@@ -10,23 +10,14 @@ public class SearchInfo {
     private Logo logo;
     private /*double*/ String price;
 
+    public GraphData fetchGraphData(){
+        GraphData data = new GraphData(chart.length);
+        for(int i = chart.length - 1; i >= 0; i--){
+            data.addDataPoint(chart[i].getFormattedDate(), chart[i].getCloseDouble(), i);
+        }
+        return(data);
+    }
 
-    public double[] getWeekofData(){
-        double[] week = new double[10];
-        //int index = 0;
-        for(int i = 0; i< 10; i++){
-            week[i] = Double.parseDouble(chart[chart.length-1-i].getClose());
-        }
-        return week;
-    }
-    public String[] getWeekofDates(){
-        String[] week = new String[10];
-        //int index = 0;
-        for(int i = 0; i< 10; i++){
-            week[i] = chart[chart.length-1-i].getDate();
-        }
-        return week;
-    }
     public String[] getDisplaySet(){
         String[] set = new String[16+news.length];
         int i = 0;

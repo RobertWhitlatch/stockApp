@@ -8,10 +8,14 @@ import android.view.ViewGroup;
 public class StockDisplayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private String[] displaySet;
-    private final int IMAGE = 0;
+    private GraphData graphData;
+    private final int GRAPH = 0;
+    private final int IMAGE = 1;
+    private final int TEXT = 2;
 
-    public StockDisplayAdapter(String[] displaySet) {
-        this.displaySet = displaySet;
+    public StockDisplayAdapter(SearchInfo info) {
+        this.displaySet = info.getDisplaySet();
+        this.graphData = info.fetchGraphData();
     }
 
     @Override
@@ -21,35 +25,54 @@ public class StockDisplayAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0) return IMAGE;
-        else return 1;
+        switch(position){
+            case 0:
+                return (GRAPH);
+            case 1:
+                return (IMAGE);
+            default:
+                return (TEXT);
+        }
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
-        RecyclerView.ViewHolder viewHolder;
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-
-        if(viewType == IMAGE) {
-            View v = inflater.inflate(R.layout.image_view_holder, viewGroup, false);
-            viewHolder = new ImageViewHolder(v,viewGroup);
-        } else {
-            View v = inflater.inflate(R.layout.text_view_holder, viewGroup, false);
-            viewHolder = new TextViewHolder(v);
+        View v;
+        switch(viewType){
+            case GRAPH:
+                v = inflater.inflate(R.layout.graph_view_holder, viewGroup, false);
+                return(new GraphViewHolder(v,viewGroup));
+            case IMAGE:
+                v = inflater.inflate(R.layout.image_view_holder, viewGroup, false);
+                return(new ImageViewHolder(v,viewGroup));
+            case TEXT:
+            default:
+                v = inflater.inflate(R.layout.text_view_holder, viewGroup, false);
+                return(new TextViewHolder(v));
         }
-        return (viewHolder);
     }
 
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
-        if(viewHolder.getItemViewType() == IMAGE){
-            ImageViewHolder vh = (ImageViewHolder) viewHolder;
-            vh.applyImage(displaySet[position]);
-        } else {
-            TextViewHolder vh = (TextViewHolder) viewHolder;
-            vh.applyText(displaySet[position]);
+
+        switch(viewHolder.getItemViewType()){
+            case GRAPH:
+                GraphViewHolder gvh = (GraphViewHolder) viewHolder;
+                gvh.applyGraph(graphData);
+                break;
+            case IMAGE:
+                ImageViewHolder ivh = (ImageViewHolder) viewHolder;
+                ivh.applyImage(displaySet[position-1]);
+                break;
+            case TEXT:
+            default:
+                TextViewHolder tvh = (TextViewHolder) viewHolder;
+                tvh.applyText(displaySet[position-1]);
+                break;
+
         }
 
     }

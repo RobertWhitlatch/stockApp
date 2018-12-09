@@ -1,5 +1,11 @@
 package ee461l.stockapp;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class ChartDay {
 
     private /*String*/ String date;
@@ -14,9 +20,20 @@ public class ChartDay {
     private /*double*/ String vwap;
     private /*String*/ String label;
     private /*double*/ String changeOverTime;
+    private transient static DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);;
 
     public String getDate() {
         return date;
+    }
+
+    public Date getFormattedDate(){
+        Date dateObj = null;
+        try {
+            dateObj = df.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return (dateObj);
     }
 
     public void setDate(String date) {
@@ -49,6 +66,10 @@ public class ChartDay {
 
     public String getClose() {
         return close;
+    }
+
+    public double getCloseDouble(){
+        return (Double.parseDouble(close));
     }
 
     public void setClose(String close) {
