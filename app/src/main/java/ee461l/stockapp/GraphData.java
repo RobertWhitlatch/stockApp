@@ -24,7 +24,6 @@ public class GraphData {
     public DataPoint[] getGraphData(){
         DataPoint[] array = new DataPoint[width];
         for(int i = 0; i < width; i++){
-
             array[i] = new DataPoint(dataDates[i],closingData[i]);
         }
         return (array);
