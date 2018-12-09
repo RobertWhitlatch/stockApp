@@ -17,7 +17,9 @@
     <string name="fav_display">Favorite Display</string>
     <string name="crypto">Crypto Currencies</string>
     <string name="crypto_list">Crypto Currency List</string>
+    <string name="crypto_display">Crypto Currency Details</string>
     <string name="financial_news">Financial News</string>
+    <string name="news_link">Go to Article</string>
     <string name="action_settings">Settings</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
