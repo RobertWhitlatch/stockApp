@@ -49,8 +49,15 @@
             android:name=".FavoriteDisplay"
             android:label="@string/fav_display"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CryptoList" />
-        <activity android:name=".CryptoDisplay"></activity>
+        <activity
+            android:name=".CryptoList"
+            android:label="@string/crypto_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CryptoDisplay"
+            android:label="@string/crypto_display"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MitchellNews"></activity>
     </application>
 
 </manifest>

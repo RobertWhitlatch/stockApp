@@ -173,4 +173,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    public void gotoMitchellNews(View v){
+        CallNewsApi fetchNews = new CallNewsApi();
+        try {
+            Object obj = fetchNews.execute(newsEndpoint + openSearch + stockMarketNews + newsAPIKey).get();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Intent intent = new Intent(getApplicationContext(), MitchellNews.class);
+        startActivity(intent);
+    }
+
 }

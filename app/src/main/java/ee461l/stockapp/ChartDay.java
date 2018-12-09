@@ -20,7 +20,7 @@ public class ChartDay {
     private /*double*/ String vwap;
     private /*String*/ String label;
     private /*double*/ String changeOverTime;
-    private transient static DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);;
+    private transient static DateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
     public String getDate() {
         return date;

@@ -4,7 +4,6 @@ import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 
-
 import static ee461l.stockapp.CryptoList.cryptoInfo;
 import static ee461l.stockapp.SearchStocks.terms;
 import static ee461l.stockapp.SearchStocks.info;
@@ -31,24 +30,27 @@ public class CallIEX extends AsyncTask<String,Void,Void> {
         String jsonStr = httpHandler.makeServiceCall(url[0]);
         if (jsonStr != null) {
             Gson gson = new Gson();
-            if(mode.equalsIgnoreCase("terms")){
-                SymbolRefData[] ref = gson.fromJson(jsonStr, SymbolRefData[].class);
-                terms.setRefData(ref);
-            } else if(mode.equalsIgnoreCase("search")) {
-                info = gson.fromJson(jsonStr, SearchInfo.class);
-            } else if(mode.equalsIgnoreCase("favorites")) {
-                favorites[index] = gson.fromJson(jsonStr, SearchInfo.class);
-            } else if(mode.equalsIgnoreCase("crypto")) {
-                Crypto[] ref = gson.fromJson(jsonStr, Crypto[].class);
-                cryptoInfo.setCrypto(ref);
+            switch(mode){
+                case "terms":
+                    SymbolRefData[] ref = gson.fromJson(jsonStr, SymbolRefData[].class);
+                    terms.setRefData(ref);
+                    break;
+                case "search":
+                    info = gson.fromJson(jsonStr, SearchInfo.class);
+                    break;
+                case "favorites":
+                    favorites[index] = gson.fromJson(jsonStr, SearchInfo.class);
+                    break;
+                case "crypto":
+                    Crypto[] crypto = gson.fromJson(jsonStr, Crypto[].class);
+                    cryptoInfo.setCrypto(crypto);
+                    break;
+                default:
+                    break;
+
             }
         }
         return null;
-    }
-
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        super.onPostExecute(aVoid);
     }
 
 }

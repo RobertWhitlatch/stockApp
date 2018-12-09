@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CryptoList">
+    tools:context=".MitchellNews">
 
     <Button
-        android:id="@+id/crypto_go_home"
+        android:id="@+id/news_go_home"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_margin="8dp"
@@ -19,14 +19,13 @@
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/crypto_list"
+        android:id="@+id/news_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:layout_below="@id/crypto_go_home"
+        android:layout_below="@id/news_go_home"
         app:layoutManager="LinearLayoutManager"
-        tools:context=".CryptoList"
-        tools:listitem="@layout/text_view_holder" />
-
+        tools:context=".MitchellNews"
+        tools:listitem="@layout/news_view_holder" />
 
 </RelativeLayout>

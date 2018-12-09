@@ -35,12 +35,8 @@ public class FavoritesListAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-
-        RecyclerView.ViewHolder viewHolder;
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-
         View v = inflater.inflate(R.layout.favorites_view_holder, viewGroup, false);
-
         return (new FavoritesViewHolder(v,viewGroup));
     }
 
@@ -53,8 +49,7 @@ public class FavoritesListAdapter extends RecyclerView.Adapter<RecyclerView.View
         vh.itemView.setOnClickListener(detailOnClickListener);
     }
 
-
-    class InfoContainer{
+    class InfoContainer {
 
         private int position;
         private String symbol;
