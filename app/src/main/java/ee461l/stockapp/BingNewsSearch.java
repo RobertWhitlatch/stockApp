@@ -1,7 +1,6 @@
 package ee461l.stockapp;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -36,7 +35,6 @@ public class BingNewsSearch {
     // the endpoint for your Bing Web search instance in your Azure dashboard.
     static String host = "https://api.cognitive.microsoft.com";
     static String path = "/bing/v7.0/news/search";
-
     /*
     -uses microsoft bin api to get json of relevant articles
     -returns map of all results
@@ -74,7 +72,6 @@ public class BingNewsSearch {
     public static String prettify(String json_text) {
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(json_text).getAsJsonObject();
-        // Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         JsonArray docJson = json.getAsJsonArray("value");
         String allHeaders = "";
@@ -101,7 +98,6 @@ public class BingNewsSearch {
     public static ArrayList<String> prettifyURL(String json_text) {
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(json_text).getAsJsonObject();
-        //Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         JsonArray docJson = json.getAsJsonArray("value");
         String urls = "";
@@ -132,7 +128,6 @@ public class BingNewsSearch {
     public static ArrayList<String> prettifyThumbnail(String json_text) {
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(json_text).getAsJsonObject();
-        // Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonArray docJson = json.getAsJsonArray("value");
         String images = "";
         ArrayList<String> imageList = new ArrayList<String>();
@@ -158,7 +153,6 @@ public class BingNewsSearch {
                 images = "http://www.agilelaw.com/wp-content/uploads/free-stock-photos-for-law-firms.jpg";
             }
             imageList.add(images);
-            // System.out.println(images);
 
         }
         return  imageList;
