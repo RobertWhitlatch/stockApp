@@ -12,20 +12,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 
 public class NewsListAdapter extends BaseAdapter {
 
     Context context;
-    //private final String [] values;
     private  ArrayList<String> values;
-   // private final int [] images;
     private ArrayList<Bitmap> images;
 
     public NewsListAdapter(Context context, ArrayList<String> values, ArrayList<Bitmap> images){
-        //super(context, R.layout.single_list_app_item, utilsArrayList);
         this.context = context;
         this.values = values;
         this.images = images;
@@ -50,7 +46,6 @@ public class NewsListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-
         ViewHolder viewHolder;
         final View result;
         if (convertView == null) {
@@ -59,26 +54,22 @@ public class NewsListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.single_news_article, parent, false);
             viewHolder.article = (TextView) convertView.findViewById(R.id.newsUrl);
             viewHolder.icon = (ImageView) convertView.findViewById(R.id.thumbnail);
-
             result=convertView;
-
             convertView.setTag(viewHolder);
-        } else {
+        }
+        else {
             viewHolder = (ViewHolder) convertView.getTag();
             result=convertView;
         }
         viewHolder.article.setText(Html.fromHtml(values.get(position), Html.FROM_HTML_MODE_LEGACY));
         viewHolder.article.setMovementMethod(LinkMovementMethod.getInstance());
-
         viewHolder.icon.setImageBitmap(images.get(position));
-
         return convertView;
     }
 
     private static class ViewHolder {
         TextView article;
         ImageView icon;
-
     }
 
 }

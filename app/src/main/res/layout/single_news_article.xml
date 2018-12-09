@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/thumbnail"
@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/newsUrl"
         android:textSize="20sp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:maxLines="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

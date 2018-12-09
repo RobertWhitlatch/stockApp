@@ -9,6 +9,7 @@ public class StockDisplayAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private String[] displaySet;
     private GraphData graphData;
+    private String symbol;
     private final int GRAPH = 0;
     private final int IMAGE = 1;
     private final int TEXT = 2;
@@ -16,6 +17,7 @@ public class StockDisplayAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public StockDisplayAdapter(SearchInfo info) {
         this.displaySet = info.getDisplaySet();
         this.graphData = info.fetchGraphData();
+        this.symbol = info.getSymbol();
     }
 
     @Override
@@ -43,7 +45,7 @@ public class StockDisplayAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         switch(viewType){
             case GRAPH:
                 v = inflater.inflate(R.layout.graph_view_holder, viewGroup, false);
-                return(new GraphViewHolder(v,viewGroup));
+                return(new GraphViewHolder(v,viewGroup, symbol));
             case IMAGE:
                 v = inflater.inflate(R.layout.image_view_holder, viewGroup, false);
                 return(new ImageViewHolder(v,viewGroup));

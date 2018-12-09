@@ -22,7 +22,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 
-
 public class FinancialNews extends AppCompatActivity {
 
     ArrayList<String> urlList = new ArrayList<String>();
@@ -31,7 +30,7 @@ public class FinancialNews extends AppCompatActivity {
     ListView lView;
     ListAdapter lAdapter;
     /*
-    -NewsTask uses bing news search API to find 3 news articles based on user input
+    -NewsTask uses bing news search API to find 10 news articles based on user input
     -displays links and thumbnails for the articles
      */
     class NewsTask extends AsyncTask<String, Void, ArrayList<Bitmap>> {
@@ -60,7 +59,6 @@ public class FinancialNews extends AppCompatActivity {
         protected void onPostExecute(ArrayList<Bitmap> bitm){
 
             lAdapter = new NewsListAdapter(FinancialNews.this, urlList, bitm);
-
             lView.setAdapter(lAdapter);
             ViewCompat.setNestedScrollingEnabled(lView, true);
 
@@ -68,10 +66,8 @@ public class FinancialNews extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     Toast.makeText(FinancialNews.this, urlList.get(i)+" "+bitmapList.get(i), Toast.LENGTH_LONG).show();
-
                 }
             });
-
         }
     }
 
@@ -83,9 +79,9 @@ public class FinancialNews extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        lView = (ListView) findViewById(R.id.newsList);
 
         String news = "stock market";
-        lView = (ListView) findViewById(R.id.newsList);
         new NewsTask().execute(news);
 
 
