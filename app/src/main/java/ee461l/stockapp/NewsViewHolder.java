@@ -2,44 +2,41 @@ package ee461l.stockapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 public class NewsViewHolder extends RecyclerView.ViewHolder {
 
-    private ImageView image;
-    private TextView title;
-    private TextView citation;
-    private TextView content;
-    private Button link;
+    private TextView article;
+    private ImageView icon;
+    private View itemView;
     private ViewGroup parent;
 
-    public NewsViewHolder(View v, ViewGroup parent) {
+    public NewsViewHolder(View v, ViewGroup parent){
         super(v);
-        image = v.findViewById(R.id.news_image);
-        title = v.findViewById(R.id.news_title);
-        citation = v.findViewById(R.id.news_citation);
-        content = v.findViewById(R.id.news_content);
-        link = v.findViewById(R.id.news_link);
+        article = v.findViewById(R.id.newsUrl);
+        icon = v.findViewById(R.id.thumbnail);
+        this.itemView = v;
         this.parent = parent;
     }
 
-    public void applyContent(Article article){
-        Picasso.with(parent.getContext()).load(article.getUrlToImage()).into(image);
-        title.setText(article.getTitle());
-        citation.setText(article.getCitation());
-        content.setText(article.getContent());
-        link.setOnClickListener(new LinkListener(article.getUrl()));
-    }
+    public void applyContent(String textURL, Bitmap image){
 
+        article.setText(Html.fromHtml(textURL, Html.FROM_HTML_MODE_LEGACY));
+        article.setMovementMethod(LinkMovementMethod.getInstance());
+        icon.setImageBitmap(image);
+        int firstQuote = textURL.indexOf('"') + 1;
+        int secondQuote = textURL.indexOf('"',firstQuote);
+        String linkUrl = textURL.substring(firstQuote,secondQuote);
+        itemView.setOnClickListener(new LinkListener(linkUrl));
+    }
 
     private class LinkListener implements View.OnClickListener {
 
