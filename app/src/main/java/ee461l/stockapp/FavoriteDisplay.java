@@ -65,6 +65,12 @@ public class FavoriteDisplay extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            SentimentTask fetchSentiment = new SentimentTask(favorites[i]);
+            try {
+                Object obj = fetchSentiment.execute(favorites[i].getSymbol());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         Intent intent = new Intent(getApplicationContext(), FavoritesList.class);
         startActivity(intent);

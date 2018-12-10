@@ -1,6 +1,5 @@
 package ee461l.stockapp;
 
-import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +14,11 @@ public class GraphViewHolder  extends RecyclerView.ViewHolder  {
 
     private GraphView gv;
     private ViewGroup parent;
-    private String symbol;
-    public GraphViewHolder(View v, ViewGroup viewGroup, String symbol) {
+
+    public GraphViewHolder(View v, ViewGroup viewGroup) {
         super(v);
         this.gv = v.findViewById(R.id.graph_holder);
         this.parent = viewGroup;
-        this.symbol = symbol;
     }
 
     public GraphView getGraphView() {
@@ -32,8 +30,8 @@ public class GraphViewHolder  extends RecyclerView.ViewHolder  {
     }
 
     public void applyGraph(GraphData dataSource){
-        new SentimentTask().execute(symbol);
         gv.addSeries(new LineGraphSeries<>(dataSource.getGraphData()));
+
         // set date label formatter
         gv.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(parent.getContext()));
         gv.getGridLabelRenderer().setNumHorizontalLabels(7); // only 7 because of the space
@@ -46,64 +44,4 @@ public class GraphViewHolder  extends RecyclerView.ViewHolder  {
         gv.getViewport().setMaxX(dataSource.getMaxX());
     }
 
-
-
-    class SentimentTask extends AsyncTask<String, Void, String> {
-
-        protected  String doInBackground(String ... str){
-            String prettyRespNews = "";
-            String prettyRespSenti = "";
-            try {
-                SearchResults result = BingNewsSearch.SearchNews(str[0] +" opinion");
-                System.out.println(BingNewsSearch.prettify(result.jsonResponse));
-                prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
-
-                Documents documents = new Documents ();
-                documents.add("1", "en", prettyRespNews);
-                String response = SentimentAnalyst.GetSentiment (documents);
-                prettyRespSenti  = SentimentAnalyst.prettify (response);
-                System.out.println (SentimentAnalyst.prettify (response));
-
-            }
-            catch (Exception e) {
-                e.printStackTrace(System.out);
-                System.out.println(e);
-            }
-
-            return prettyRespSenti;
-        }
-        protected void onPostExecute(String str){
-            System.out.println(str);
-            String sentimentString = "Sentiment: ";
-            Double num = Double.parseDouble(str);
-            num = (double)Math.round(num * 1000d) / 1000d;
-            String numString = Double.toString(num);
-
-
-            sentimentString += numString + setSentimentRange(Double.parseDouble(str));
-            gv.setTitle(sentimentString);
-        }
-        public String setSentimentRange(double sentiment){
-
-            String s = "";
-            if(sentiment>=0.0 && sentiment<0.2){
-                s = " (very negative)";
-
-            }
-            else if(sentiment>=0.2 && sentiment<0.4){
-                s = " (negative)";
-            }
-            else if(sentiment>=0.4 && sentiment<0.6){
-                s = " (neutral)";
-            }
-            else if(sentiment>=0.6 && sentiment<0.8){
-                s = " (positive)";
-            }
-            else if(sentiment>=0.8 && sentiment<=1.0){
-                s = " (very positive)";
-            }
-            return s;
-
-        }
-    }
 }

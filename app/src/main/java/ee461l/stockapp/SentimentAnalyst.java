@@ -51,10 +51,8 @@ public class SentimentAnalyst {
     -json parser that finds the sentiment score and returns it
      */
     public static String prettify(String json_text) {
-        //String scores = "";
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(json_text).getAsJsonObject();
-        //Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonArray docJson = json.getAsJsonArray("documents");
         JsonElement obj = docJson.get(0);
         return obj.getAsJsonObject().get("score").toString();

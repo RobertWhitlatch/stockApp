@@ -153,6 +153,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            SentimentTask fetchSentiment = new SentimentTask(favorites[i]);
+            try {
+                Object obj = fetchSentiment.execute(favorites[i].getSymbol());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         Intent intent = new Intent(getApplicationContext(), FavoritesList.class);
         startActivity(intent);
