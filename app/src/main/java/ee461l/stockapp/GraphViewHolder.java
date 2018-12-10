@@ -82,8 +82,13 @@ class GraphViewHolder  extends RecyclerView.ViewHolder  {
                 c.add(Calendar.DATE, 1);
                 predictedData.addDataPoint(c.getTime(), result.get(i), i );
             }
+
             LineGraphSeries<DataPoint> prediction = new LineGraphSeries<>(predictedData.getGraphData());
-            prediction.setColor(Color.RED);
+            if(result.get(0) >= result.get(result.size() - 1)){
+                prediction.setColor(Color.RED);
+            }else{
+                prediction.setColor(Color.GREEN);
+            }
             gv.get().addSeries(prediction);
             gv.get().getViewport().setMaxX(predictedData.getMaxX());
         }

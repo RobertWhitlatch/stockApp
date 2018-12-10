@@ -41,7 +41,6 @@ class SentimentTask extends AsyncTask<String, Void, String> {
         sentimentString += numString + setSentimentRange(Double.parseDouble(str));
         gv.get().setTitle(sentimentString);
         gv.get().setTitleTextSize(50.0f);
-        gv.get().setTitleColor(Color.RED);
     }
 
     private String setSentimentRange(double sentiment){
@@ -49,18 +48,23 @@ class SentimentTask extends AsyncTask<String, Void, String> {
         String s = "";
         if(sentiment>=0.0 && sentiment<0.2){
             s = " (very negative)";
+            gv.get().setTitleColor(Color.RED);
 
         }
         else if(sentiment>=0.2 && sentiment<0.4){
+            gv.get().setTitleColor(Color.RED);
             s = " (negative)";
         }
         else if(sentiment>=0.4 && sentiment<0.6){
+            gv.get().setTitleColor(Color.GREEN);
             s = " (neutral)";
         }
         else if(sentiment>=0.6 && sentiment<0.8){
+            gv.get().setTitleColor(Color.GREEN);
             s = " (positive)";
         }
         else if(sentiment>=0.8 && sentiment<=1.0){
+            gv.get().setTitleColor(Color.GREEN);
             s = " (very positive)";
         }
         return s;
