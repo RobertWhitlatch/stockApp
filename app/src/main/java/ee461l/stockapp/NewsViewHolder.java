@@ -8,23 +8,23 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class NewsViewHolder extends RecyclerView.ViewHolder {
+class NewsViewHolder extends RecyclerView.ViewHolder {
 
+    @SuppressWarnings("CanBeFinal")
     private TextView article;
+    @SuppressWarnings("CanBeFinal")
     private ImageView icon;
+    @SuppressWarnings("CanBeFinal")
     private View itemView;
-    private ViewGroup parent;
 
-    public NewsViewHolder(View v, ViewGroup parent){
+    public NewsViewHolder(View v){
         super(v);
         article = v.findViewById(R.id.newsUrl);
         icon = v.findViewById(R.id.thumbnail);
         this.itemView = v;
-        this.parent = parent;
     }
 
     public void applyContent(String textURL, Bitmap image){
@@ -40,9 +40,10 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
 
     private class LinkListener implements View.OnClickListener {
 
+        @SuppressWarnings("CanBeFinal")
         private String url;
 
-        public LinkListener(String url){
+        LinkListener(String url){
             this.url = url;
         }
 

@@ -24,7 +24,7 @@
         android:layout_height="match_parent"
         android:layout_margin="16dp"
         android:layout_below="@id/financial_go_home"
-        app:layoutManager="LinearLayoutManager"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         tools:context=".FinancialNews"
         tools:listitem="@layout/single_news_article" />
 

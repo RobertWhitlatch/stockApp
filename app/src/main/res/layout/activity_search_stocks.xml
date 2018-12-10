@@ -13,8 +13,8 @@
         android:layout_centerInParent="true"
         android:layout_margin="16dp"
         android:hint="@string/search_hint"
-        android:importantForAutofill="no"
-        android:inputType="text" />
+        android:inputType="text"
+        tools:ignore="Autofill" />
 
     <Button
         android:id="@+id/search_go"
@@ -26,7 +26,6 @@
         android:text="@string/search" />
 
     <Button
-        android:id="@+id/search_back"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_margin="16dp"

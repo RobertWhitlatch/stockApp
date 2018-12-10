@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ee461l.stockapp">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -14,7 +15,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning" >
         <activity
             android:name=".LandingPage"
             android:label="@string/landing_page"
@@ -57,7 +59,6 @@
             android:name=".CryptoDisplay"
             android:label="@string/crypto_display"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MitchellNews"></activity>
     </application>
 
 </manifest>

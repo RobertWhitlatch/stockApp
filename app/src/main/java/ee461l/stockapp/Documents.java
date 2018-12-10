@@ -3,12 +3,13 @@ package ee461l.stockapp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Documents {
+class Documents {
 
-    public List<Document> documents;
+    @SuppressWarnings("CanBeFinal")
+    private List<Document> documents;
 
     public Documents() {
-        this.documents = new ArrayList<Document>();
+        this.documents = new ArrayList<>();
     }
 
     public void add(String id, String language, String text) {

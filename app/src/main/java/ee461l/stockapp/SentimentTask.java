@@ -2,8 +2,9 @@ package ee461l.stockapp;
 
 import android.os.AsyncTask;
 
-public class SentimentTask extends AsyncTask<String, Void, String> {
+class SentimentTask extends AsyncTask<String, Void, String> {
 
+    @SuppressWarnings("CanBeFinal")
     private SearchInfo info;
 
     public SentimentTask(SearchInfo info){
@@ -11,7 +12,7 @@ public class SentimentTask extends AsyncTask<String, Void, String> {
     }
 
     protected  String doInBackground(String ... str){
-        String prettyRespNews = "";
+        String prettyRespNews;
         String prettyRespSenti = "";
         try {
             SearchResults result = BingNewsSearch.SearchNews(str[0] +" opinion");
@@ -36,7 +37,7 @@ public class SentimentTask extends AsyncTask<String, Void, String> {
         info.setSentimentAnalysis(sentimentString);
     }
 
-    public String setSentimentRange(double sentiment){
+    private String setSentimentRange(double sentiment){
 
         String s = "";
         if(sentiment>=0.0 && sentiment<0.2){

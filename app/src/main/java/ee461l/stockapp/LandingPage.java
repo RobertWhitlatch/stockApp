@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 public class LandingPage extends AppCompatActivity {
 
+    @SuppressWarnings("CanBeFinal")
     private Handler LandingWait = new Handler();
 
     @Override
@@ -24,11 +25,11 @@ public class LandingPage extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish(); // marks Landing Page complete, thus non-navigable...
-                } catch (Exception ignored) {
-                    ignored.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
-        }, 1000); //changed to 1000 for debugging speed //5000);  // LandingWait.postDelay()
+        }, 5000); //changed to 1000 for debugging speed //5000);  // LandingWait.postDelay()
     } // onCreate()
 
     @Override

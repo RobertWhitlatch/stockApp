@@ -9,6 +9,7 @@ import android.view.View;
 
 public class FinancialNews extends AppCompatActivity {
 
+    @SuppressWarnings("CanBeFinal")
     public static NewsContainer newsContainer = new NewsContainer();
 
     @Override

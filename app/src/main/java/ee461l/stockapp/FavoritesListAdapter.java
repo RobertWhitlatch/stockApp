@@ -2,14 +2,17 @@ package ee461l.stockapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FavoritesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+class FavoritesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    @SuppressWarnings("CanBeFinal")
     private String[] symbols;
+    @SuppressWarnings("CanBeFinal")
     private String[] logoURLs;
     private final View.OnClickListener detailOnClickListener = new View.OnClickListener() {
         @Override
@@ -33,8 +36,9 @@ public class FavoritesListAdapter extends RecyclerView.Adapter<RecyclerView.View
         return symbols.length;
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View v = inflater.inflate(R.layout.favorites_view_holder, viewGroup, false);
         return (new FavoritesViewHolder(v,viewGroup));
@@ -42,7 +46,7 @@ public class FavoritesListAdapter extends RecyclerView.Adapter<RecyclerView.View
 
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         FavoritesViewHolder vh = (FavoritesViewHolder) viewHolder;
         vh.applyContent(symbols[position], logoURLs[position]);
         vh.itemView.setTag(new InfoContainer(position,symbols[position]));

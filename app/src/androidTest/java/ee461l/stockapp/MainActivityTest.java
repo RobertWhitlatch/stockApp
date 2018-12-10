@@ -4,17 +4,12 @@ import android.support.test.espresso.Espresso;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 
-import com.google.gson.Gson;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -31,9 +26,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static ee461l.stockapp.Define.*;
-import static ee461l.stockapp.SentimentAnalyst.accessKey;
-import static ee461l.stockapp.SentimentAnalyst.host;
-import static ee461l.stockapp.SentimentAnalyst.path;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.*;
 import static android.support.test.espresso.intent.Intents.intended;
@@ -56,15 +48,15 @@ public class MainActivityTest {
         Intents.release();
     }
 
-    @Test
-    public void LoginTest() throws Exception {
-        /*
-        Test if Google Signin works
-         */
-    }
+//    @Test
+//    public void LoginTest() {
+//        /*
+//        Test if Google Signin works
+//         */
+//    }
 
     @Test
-    public void DisplayTest() throws Exception {
+    public void DisplayTest() {
 
 
         if(MainActivity.current_account.getAccount() != null){
@@ -85,9 +77,9 @@ public class MainActivityTest {
     }
 
     @Test
-    public void ButtonClickTest() throws Exception {
+    public void ButtonClickTest() {
         /*
-        This test checks if all the button on the ladning page are clickable
+        This test checks if all the buttons on the main page are clickable
          */
         Espresso.onView(withId(R.id.search_stocks)).check(matches(isClickable()));
         Espresso.onView(withId(R.id.my_favorites)).check(matches(isClickable()));
@@ -96,7 +88,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void DoesSearchStockPageLoad() throws Exception {
+    public void DoesSearchStockPageLoad() {
         /*
         This test checks if SearchStock intent is able to be launched
          */
@@ -105,7 +97,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void DoesSearchButtonWork() throws Exception {
+    public void DoesSearchButtonWork() {
         Espresso.onView(withId(R.id.search_stocks)).perform(click());
         Espresso.onView(withId(R.id.search_query)).perform(typeText("GOOGL"), closeSoftKeyboard());
         Espresso.onView(withId(R.id.search_go)).perform(click());
@@ -113,7 +105,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void DoesFavoritePageLoad() throws Exception {
+    public void DoesFavoritePageLoad() {
         /*
         This test checks if Favorite page intent is able to be launched
          */
@@ -123,7 +115,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void DoesTidBitPageLoad() throws Exception {
+    public void DoesTidBitPageLoad() {
         /*
         This test checks if Todays TidBits page intent is able to be launched
          */
@@ -132,7 +124,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void DoesNewsPageLoad() throws Exception {
+    public void DoesNewsPageLoad() {
         /*
         This test checks if Financial News page intent is able to be launched
          */
@@ -141,7 +133,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void SearchStockSearchTest() throws Exception {
+    public void SearchStockSearchTest() {
         /*
         This test check if search is functional in search stock page.
         It's checking if Favorite button and Reset button get displayed after searching
@@ -162,7 +154,7 @@ public class MainActivityTest {
     public void StockAPITest() throws Exception {
         CallIEX fetchStock = new CallIEX("search");
         String searchText = "GOOGL";
-        Void result = fetchStock.execute(apiEndpoint + stockRequest + searchText + requestCQNSCLP).get();
+        @SuppressWarnings("unused") Void result = fetchStock.execute(apiEndpoint + stockRequest + searchText + requestCQNSCLP).get();
         assertNotNull(SearchStocks.info);
     }
 
@@ -170,7 +162,7 @@ public class MainActivityTest {
     public void StockAPIFormatTest() throws Exception {
         CallIEX fetchStock = new CallIEX("search");
         String searchText = "GOOGL";
-        Void result = fetchStock.execute(apiEndpoint + stockRequest + searchText + requestCQNSCLP).get();
+        @SuppressWarnings("unused") Void result = fetchStock.execute(apiEndpoint + stockRequest + searchText + requestCQNSCLP).get();
         Company expectedcompany = new Company();
         expectedcompany.setSymbol("GOOGL");
         assertEquals(expectedcompany.getSymbol(), SearchStocks.info.getSymbol());
@@ -199,10 +191,8 @@ public class MainActivityTest {
 
     @Test
     public void SentimentAPITest() throws Exception {
-        String prettyRespNews = "";
         SearchResults result = BingNewsSearch.SearchNews("GOOGL" +" opinion");
-        System.out.println(BingNewsSearch.prettify(result.jsonResponse));
-        prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
+        String prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
 
         Documents documents = new Documents ();
         documents.add("1", "en", prettyRespNews);
@@ -212,22 +202,22 @@ public class MainActivityTest {
 
     @Test
     public void SentimentAPIFormatTest() throws Exception {
-        String prettyRespNews = "";
         SearchResults result = BingNewsSearch.SearchNews("aaasdasdawga" +" opinion");
-        System.out.println(BingNewsSearch.prettify(result.jsonResponse));
-        prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
+        String prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
 
         Documents documents = new Documents ();
         documents.add("1", "en", prettyRespNews);
         String response = SentimentAnalyst.GetSentiment (documents);
         assertNotNull(response);
     }
+
     @Test
-    public void DataBaseTest() throws Exception {
+    public void DataBaseTest() {
         /*
         This tests if you can read our database
          */
         User user = new User();       // <-------- We added this user already in our Database
+        //noinspection ConstantConditions
         user.setId(MainActivity.current_account.getId());
         user.setName("EE461L");
         List<String> favorite = new ArrayList<>();

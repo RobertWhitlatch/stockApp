@@ -18,25 +18,28 @@ import java.util.Scanner;
 import javax.net.ssl.HttpsURLConnection;
 
 class SearchResults{
+    @SuppressWarnings("CanBeFinal")
     HashMap<String, String> relevantHeaders;
+    @SuppressWarnings("CanBeFinal")
     String jsonResponse;
+
     SearchResults(HashMap<String, String> headers, String json) {
         relevantHeaders = headers;
         jsonResponse = json;
     }
 }
 
-public class BingNewsSearch {
+class BingNewsSearch {
 
     // Replace the subscriptionKey string value with your valid subscription key.
-    static String subscriptionKey = "059a059e07c94bd8b24dd170ac55b2f0";
+    static final String subscriptionKey = "059a059e07c94bd8b24dd170ac55b2f0";
 
     // Verify the endpoint URI.  At this writing, only one endpoint is used for Bing
     // search APIs.  In the future, regional endpoints may be available.  If you
     // encounter unexpected authorization errors, double-check this value against
     // the endpoint for your Bing Web search instance in your Azure dashboard.
-    static String host = "https://api.cognitive.microsoft.com";
-    static String path = "/bing/v7.0/news/search";
+    static final String host = "https://api.cognitive.microsoft.com";
+    static final String path = "/bing/v7.0/news/search";
     /*
     -uses microsoft bin api to get json of relevant articles
     -returns map of all results
@@ -76,9 +79,9 @@ public class BingNewsSearch {
         JsonObject json = parser.parse(json_text).getAsJsonObject();
 
         JsonArray docJson = json.getAsJsonArray("value");
-        String allHeaders = "";
-        String allDescriptions = "";
-        int articleNum = 0;
+        StringBuilder allHeaders = new StringBuilder();
+        StringBuilder allDescriptions = new StringBuilder();
+        int articleNum;
         if(docJson.size()<2){
             articleNum = docJson.size();
         }
@@ -87,11 +90,11 @@ public class BingNewsSearch {
         }
         for(int i = 0; i < articleNum; i++){
             JsonElement obj = docJson.get(i);
-            allHeaders += obj.getAsJsonObject().get("name").toString() + " ";
-            allDescriptions += obj.getAsJsonObject().get("description").toString() + " ";
-
+            allHeaders.append(obj.getAsJsonObject().get("name").toString()).append(" ");
+            allDescriptions.append(obj.getAsJsonObject().get("description").toString()).append(" ");
         }
-        return allHeaders + allDescriptions;
+        allHeaders.append(allDescriptions.toString());
+        return allHeaders.toString();
     }
 
     /*
@@ -102,11 +105,11 @@ public class BingNewsSearch {
         JsonObject json = parser.parse(json_text).getAsJsonObject();
 
         JsonArray docJson = json.getAsJsonArray("value");
-        String urls = "";
-        String title = "";
-        String htmlForm = "";
-        ArrayList<String> urlList = new ArrayList<String>();
-        int articleNum = 0;
+        String urls;
+        String title;
+        String htmlForm;
+        ArrayList<String> urlList = new ArrayList<>();
+        int articleNum;
         if(docJson.size()<10){
             articleNum = docJson.size();
         }
@@ -125,15 +128,15 @@ public class BingNewsSearch {
     }
 
     /*
-    -json parser that returns array of urls of thumbnails for sevral news articles
+    -json parser that returns array of urls of thumbnails for several news articles
      */
     public static ArrayList<String> prettifyThumbnail(String json_text) {
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(json_text).getAsJsonObject();
         JsonArray docJson = json.getAsJsonArray("value");
-        String images = "";
-        ArrayList<String> imageList = new ArrayList<String>();
-        int articleNum = 0;
+        String images;
+        ArrayList<String> imageList = new ArrayList<>();
+        int articleNum;
         if(docJson.size()<10){
             articleNum = docJson.size();
         }

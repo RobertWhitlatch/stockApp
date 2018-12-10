@@ -13,11 +13,11 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class SentimentAnalyst {
+class SentimentAnalyst {
 
-    static String accessKey = "31c002c849484349b9383bfbd0018530";
-    static String host = "https://westus.api.cognitive.microsoft.com";
-    static String path = "/text/analytics/v2.0/sentiment";
+    private final static String accessKey = "31c002c849484349b9383bfbd0018530";
+    private final static String host = "https://westus.api.cognitive.microsoft.com";
+    private final static String path = "/text/analytics/v2.0/sentiment";
 
     public static String GetSentiment (Documents documents) throws Exception {
         String text = new Gson().toJson(documents);

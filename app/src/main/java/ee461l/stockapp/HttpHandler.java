@@ -14,7 +14,7 @@ import java.net.URL;
 
 import static android.content.ContentValues.TAG;
 
-public class HttpHandler {
+class HttpHandler {
 
     public HttpHandler() {
 

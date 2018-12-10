@@ -10,8 +10,9 @@ import static ee461l.stockapp.SearchStocks.info;
 import static ee461l.stockapp.FavoritesList.favorites;
 
 //Changed it to public to Test
-public class CallIEX extends AsyncTask<String,Void,Void> {
+class CallIEX extends AsyncTask<String,Void,Void> {
 
+    @SuppressWarnings("CanBeFinal")
     private String mode;
     private int index;
 

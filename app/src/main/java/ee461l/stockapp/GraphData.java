@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class GraphData {
 
+    @SuppressWarnings("CanBeFinal")
     private int width;
     private Date[] dataDates;
     private double[] closingData;

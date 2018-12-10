@@ -28,7 +28,7 @@ import static ee461l.stockapp.FinancialNews.newsContainer;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    GoogleSignInClient mGoogleSignInClient;
+    private GoogleSignInClient mGoogleSignInClient;
     public static GoogleSignInAccount current_account;
     public static AppDataBase appDataBase;
     public static User currentUser;
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    protected void updateUI(GoogleSignInAccount account){
+    private void updateUI(GoogleSignInAccount account){
         if(account == null){
             return;
         }
@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         currentUser = appDataBase.dao().getUser(userId);
         if(currentUser == null){
             currentUser = new User();
+            //noinspection ConstantConditions
             currentUser.setId(userId);
             currentUser.setName(account.getEmail());
             currentUser.setFavorites(new ArrayList<String>());

@@ -7,13 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
-import com.jjoe64.graphview.series.LineGraphSeries;
-
 import java.util.List;
 
-import static ee461l.stockapp.Define.LABEL_ANGLE;
 import static ee461l.stockapp.Define.apiEndpoint;
 import static ee461l.stockapp.Define.requestCQNSCLP;
 import static ee461l.stockapp.Define.stockRequest;
@@ -25,14 +20,13 @@ import static ee461l.stockapp.MainActivity.currentUser;
 
 public class FavoriteDisplay extends AppCompatActivity {
 
-    private int position;
     private String symbol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite_display);
-        position = getIntent().getIntExtra("position",-1);
+        int position = getIntent().getIntExtra("position",-1);
         symbol = getIntent().getStringExtra("symbol");
 
         RecyclerView resultsView = findViewById(R.id.favorite_display);

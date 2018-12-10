@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class DataConverter {
+class DataConverter {
 
     @TypeConverter // note this annotation
     public String fromFavList(List<String> Favlist) {
@@ -16,8 +16,7 @@ public class DataConverter {
         Gson gson = new Gson();
         Type type = new TypeToken<List<String>>() {
         }.getType();
-        String json = gson.toJson(Favlist, type);
-        return json;
+        return gson.toJson(Favlist, type);
     }
 
     @TypeConverter // note this annotation
@@ -28,8 +27,7 @@ public class DataConverter {
         Gson gson = new Gson();
         Type type = new TypeToken<List<String>>() {
         }.getType();
-        List<String> productCategoriesList = gson.fromJson(Favlist, type);
-        return productCategoriesList;
+        return gson.fromJson(Favlist, type);
     }
 
 }

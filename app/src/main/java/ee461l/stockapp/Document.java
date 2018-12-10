@@ -1,8 +1,11 @@
 package ee461l.stockapp;
 
-public class Document {
+class Document {
+    @SuppressWarnings("CanBeFinal")
     public String id;
+    @SuppressWarnings("CanBeFinal")
     public String language;
+    @SuppressWarnings("CanBeFinal")
     public String text;
 
     public Document(String id, String language, String text){

@@ -13,13 +13,11 @@ import static ee461l.stockapp.CryptoList.cryptoInfo;
 
 public class CryptoDisplay extends AppCompatActivity {
 
-    private int position;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crypto_display);
-        position = getIntent().getIntExtra("position",-1);
+        int position = getIntent().getIntExtra("position",-1);
 
         RecyclerView resultsView = findViewById(R.id.crypto_display);
         resultsView.setLayoutManager(new LinearLayoutManager(this));

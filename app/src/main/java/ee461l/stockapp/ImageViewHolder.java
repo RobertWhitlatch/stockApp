@@ -7,9 +7,10 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-public class ImageViewHolder extends RecyclerView.ViewHolder {
+class ImageViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView iv;
+    @SuppressWarnings("CanBeFinal")
     private ViewGroup parent;
 
 

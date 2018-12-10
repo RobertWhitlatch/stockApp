@@ -1,5 +1,561 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Document id" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Document language" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Document text" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay change" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay changeOverTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay changePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay close" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay date" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay df" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay high" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay label" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay low" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay open" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay unadjustedVolume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay volume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.ChartDay vwap" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company CEO" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company exchange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company industry" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company issueType" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company sector" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company tags" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Company website" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto avgTotalVolume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto calculationPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto closeTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto delayedPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto delayedPriceTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto extendedChange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto extendedChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto extendedPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto extendedPriceTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexAskPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexAskSize" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexBidPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexBidSize" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexLastUpdated" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexMarketPercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexRealtimePrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexRealtimeSize" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto iexVolume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto latestSource" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto latestTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto latestUpdate" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto marketCap" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto openTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto peRatio" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto primaryExchange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto sector" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto week52High" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto week52Low" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Crypto ytdChange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.News datetime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.News image" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.News related" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.News source" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.News summary" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.News url" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote avgTotalVolume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote calculationPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote change" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote changePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote close" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote closeTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote companyName" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote delayedPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote delayedPriceTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote extendedChange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote extendedChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote extendedPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote extendedPriceTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote high" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexAskPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexAskSize" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexBidPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexBidSize" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexLastUpdated" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexMarketPercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexRealtimePrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexRealtimeSize" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote iexVolume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote latestPrice" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote latestSource" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote latestTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote latestUpdate" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote latestVolume" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote low" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote marketCap" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote open" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote openTime" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote peRatio" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote previousClose" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote primaryExchange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote sector" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote symbol" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote week52High" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote week52Low" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Quote ytdChange" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats _float" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats beta" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats cash" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats companyName" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats consensusEPS" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats day200MovingAvg" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats day30ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats day50MovingAvg" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats day5ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats debt" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats dividendRate" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats dividendYield" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats EBITDA" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats EPSSurpriseDollar" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats EPSSurprisePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats exDividendDate" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats grossProfit" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats insiderPercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats institutionPercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats latestEPS" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats latestEPSDate" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats marketcap" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats month1ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats month3ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats month6ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats numberOfEstimates" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats peRatioHigh" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats peRatioLow" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats priceToBook" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats priceToSales" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats profitMargin" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats returnOnAssets" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats returnOnCapital" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats returnOnEquity" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats revenue" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats revenuePerEmployee" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats revenuePerShare" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats sharesOutstanding" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats shortDate" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats shortInterest" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats shortRatio" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats symbol" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats ttmEPS" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats week52change" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats week52high" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats week52low" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats year1ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats year2ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats year5ChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.Stats ytdChangePercent" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.SymbolRefData date" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.SymbolRefData iexId" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.SymbolRefData isEnabled" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.SymbolRefData name" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.SymbolRefData type" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.FavoritesViewHolder iv" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.FavoritesViewHolder tv" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.FavoritesListAdapter detailOnClickListener" />
+      <entry_point TYPE="field" FQNAME="ee461l.stockapp.FavoritesViewHolder parent" />
+    </entry_points>
+    <pattern value="ee461l.stockapp.ChartDay" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getChange" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getChangeOverTime" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getChangePercent" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getClose" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getCloseDouble" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getDate" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getFormattedDate" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getHigh" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getLabel" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getLow" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getOpen" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getUnadjustedVolume" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getVolume" />
+    <pattern value="ee461l.stockapp.ChartDay" method="getVwap" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setChange" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setChangeOverTime" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setChangePercent" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setClose" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setDate" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setHigh" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setLabel" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setLow" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setOpen" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setUnadjustedVolume" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setVolume" />
+    <pattern value="ee461l.stockapp.ChartDay" method="setVwap" />
+    <pattern value="ee461l.stockapp.Company" />
+    <pattern value="ee461l.stockapp.Company" method="getCEO" />
+    <pattern value="ee461l.stockapp.Company" method="getExchange" />
+    <pattern value="ee461l.stockapp.Company" method="getIndustry" />
+    <pattern value="ee461l.stockapp.Company" method="getIssueType" />
+    <pattern value="ee461l.stockapp.Company" method="getSector" />
+    <pattern value="ee461l.stockapp.Company" method="getTags" />
+    <pattern value="ee461l.stockapp.Company" method="getWebsite" />
+    <pattern value="ee461l.stockapp.Company" method="setCEO" />
+    <pattern value="ee461l.stockapp.Company" method="setDescription" />
+    <pattern value="ee461l.stockapp.Company" method="setExchange" />
+    <pattern value="ee461l.stockapp.Company" method="setIndustry" />
+    <pattern value="ee461l.stockapp.Company" method="setIssueType" />
+    <pattern value="ee461l.stockapp.Company" method="setSector" />
+    <pattern value="ee461l.stockapp.Company" method="setTags" />
+    <pattern value="ee461l.stockapp.Company" method="setWebsite" />
+    <pattern value="ee461l.stockapp.Crypto" />
+    <pattern value="ee461l.stockapp.Crypto" method="getAskPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getAskSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="getAvgTotalVolume" />
+    <pattern value="ee461l.stockapp.Crypto" method="getBidPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getBidSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="getCalculationPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getChange" />
+    <pattern value="ee461l.stockapp.Crypto" method="getChangePercent" />
+    <pattern value="ee461l.stockapp.Crypto" method="getClose" />
+    <pattern value="ee461l.stockapp.Crypto" method="getCloseTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="getCompanyName" />
+    <pattern value="ee461l.stockapp.Crypto" method="getDelayedPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getDelayedPriceTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="getExtendedChange" />
+    <pattern value="ee461l.stockapp.Crypto" method="getExtendedChangePercent" />
+    <pattern value="ee461l.stockapp.Crypto" method="getExtendedPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getExtendedPriceTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="getHigh" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexAskPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexAskSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexBidPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexBidSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexLastUpdated" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexMarketPercent" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexRealtimePrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexRealtimeSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="getIexVolume" />
+    <pattern value="ee461l.stockapp.Crypto" method="getLatestPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="getLatestSource" />
+    <pattern value="ee461l.stockapp.Crypto" method="getLatestTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="getLatestUpdate" />
+    <pattern value="ee461l.stockapp.Crypto" method="getLatestVolume" />
+    <pattern value="ee461l.stockapp.Crypto" method="getLow" />
+    <pattern value="ee461l.stockapp.Crypto" method="getMarketCap" />
+    <pattern value="ee461l.stockapp.Crypto" method="getOpen" />
+    <pattern value="ee461l.stockapp.Crypto" method="getOpenTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="getPeRatio" />
+    <pattern value="ee461l.stockapp.Crypto" method="getPreviousClose" />
+    <pattern value="ee461l.stockapp.Crypto" method="getPrimaryExchange" />
+    <pattern value="ee461l.stockapp.Crypto" method="getSector" />
+    <pattern value="ee461l.stockapp.Crypto" method="getWeek52High" />
+    <pattern value="ee461l.stockapp.Crypto" method="getWeek52Low" />
+    <pattern value="ee461l.stockapp.Crypto" method="getYtdChange" />
+    <pattern value="ee461l.stockapp.Crypto" method="setAskPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setAskSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="setAvgTotalVolume" />
+    <pattern value="ee461l.stockapp.Crypto" method="setBidPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setBidSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="setCalculationPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setChange" />
+    <pattern value="ee461l.stockapp.Crypto" method="setChangePercent" />
+    <pattern value="ee461l.stockapp.Crypto" method="setClose" />
+    <pattern value="ee461l.stockapp.Crypto" method="setCloseTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="setCompanyName" />
+    <pattern value="ee461l.stockapp.Crypto" method="setDelayedPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setDelayedPriceTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="setExtendedChange" />
+    <pattern value="ee461l.stockapp.Crypto" method="setExtendedChangePercent" />
+    <pattern value="ee461l.stockapp.Crypto" method="setExtendedPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setExtendedPriceTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="setHigh" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexAskPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexAskSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexBidPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexBidSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexLastUpdated" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexMarketPercent" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexRealtimePrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexRealtimeSize" />
+    <pattern value="ee461l.stockapp.Crypto" method="setIexVolume" />
+    <pattern value="ee461l.stockapp.Crypto" method="setLatestPrice" />
+    <pattern value="ee461l.stockapp.Crypto" method="setLatestSource" />
+    <pattern value="ee461l.stockapp.Crypto" method="setLatestTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="setLatestUpdate" />
+    <pattern value="ee461l.stockapp.Crypto" method="setLatestVolume" />
+    <pattern value="ee461l.stockapp.Crypto" method="setLow" />
+    <pattern value="ee461l.stockapp.Crypto" method="setMarketCap" />
+    <pattern value="ee461l.stockapp.Crypto" method="setOpen" />
+    <pattern value="ee461l.stockapp.Crypto" method="setOpenTime" />
+    <pattern value="ee461l.stockapp.Crypto" method="setPeRatio" />
+    <pattern value="ee461l.stockapp.Crypto" method="setPreviousClose" />
+    <pattern value="ee461l.stockapp.Crypto" method="setPrimaryExchange" />
+    <pattern value="ee461l.stockapp.Crypto" method="setSector" />
+    <pattern value="ee461l.stockapp.Crypto" method="setSymbol" />
+    <pattern value="ee461l.stockapp.Crypto" method="setWeek52High" />
+    <pattern value="ee461l.stockapp.Crypto" method="setWeek52Low" />
+    <pattern value="ee461l.stockapp.Crypto" method="setYtdChange" />
+    <pattern value="ee461l.stockapp.CryptoInfo" />
+    <pattern value="ee461l.stockapp.CryptoInfo" method="setCryptoSymbols" />
+    <pattern value="ee461l.stockapp.Document" />
+    <pattern value="ee461l.stockapp.Documents" />
+    <pattern value="ee461l.stockapp.Documents" method="getDocuments" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter.InfoContainer" method="getPosition" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter.InfoContainer" method="getSymbol" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter.InfoContainer" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter.InfoContainer" method="setPosition" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter.InfoContainer" method="setSymbol" />
+    <pattern value="ee461l.stockapp.FavoritesViewHolder" />
+    <pattern value="ee461l.stockapp.FavoritesViewHolder" method="getImageView" />
+    <pattern value="ee461l.stockapp.FavoritesViewHolder" method="getTextView" />
+    <pattern value="ee461l.stockapp.FavoritesViewHolder" method="setImageView" />
+    <pattern value="ee461l.stockapp.FavoritesViewHolder" method="setTextView" />
+    <pattern value="ee461l.stockapp.GraphData" method="getClosingData" />
+    <pattern value="ee461l.stockapp.GraphData" method="getDataDates" />
+    <pattern value="ee461l.stockapp.GraphData" />
+    <pattern value="ee461l.stockapp.GraphData" method="setClosingData" />
+    <pattern value="ee461l.stockapp.GraphData" method="setDataDates" />
+    <pattern value="ee461l.stockapp.GraphViewHolder" method="getGraphView" />
+    <pattern value="ee461l.stockapp.GraphViewHolder" />
+    <pattern value="ee461l.stockapp.GraphViewHolder" method="setGraphView" />
+    <pattern value="ee461l.stockapp.ImageViewHolder" method="getImageView" />
+    <pattern value="ee461l.stockapp.ImageViewHolder" />
+    <pattern value="ee461l.stockapp.ImageViewHolder" method="setImageView" />
+    <pattern value="ee461l.stockapp.Logo" />
+    <pattern value="ee461l.stockapp.Logo" method="setUrl" />
+    <pattern value="ee461l.stockapp.News" method="getDatetime" />
+    <pattern value="ee461l.stockapp.News" method="getImage" />
+    <pattern value="ee461l.stockapp.News" method="getRelated" />
+    <pattern value="ee461l.stockapp.News" method="getSource" />
+    <pattern value="ee461l.stockapp.News" method="getSummary" />
+    <pattern value="ee461l.stockapp.News" method="getUrl" />
+    <pattern value="ee461l.stockapp.News" />
+    <pattern value="ee461l.stockapp.News" method="setDatetime" />
+    <pattern value="ee461l.stockapp.News" method="setHeadline" />
+    <pattern value="ee461l.stockapp.News" method="setImage" />
+    <pattern value="ee461l.stockapp.News" method="setRelated" />
+    <pattern value="ee461l.stockapp.News" method="setSource" />
+    <pattern value="ee461l.stockapp.News" method="setSummary" />
+    <pattern value="ee461l.stockapp.News" method="setUrl" />
+    <pattern value="ee461l.stockapp.NewsContainer" method="getBitmapStringList" />
+    <pattern value="ee461l.stockapp.NewsContainer" method="getUrlList" />
+    <pattern value="ee461l.stockapp.NewsContainer" />
+    <pattern value="ee461l.stockapp.Quote" method="getAvgTotalVolume" />
+    <pattern value="ee461l.stockapp.Quote" method="getCalculationPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getChange" />
+    <pattern value="ee461l.stockapp.Quote" method="getChangePercent" />
+    <pattern value="ee461l.stockapp.Quote" method="getClose" />
+    <pattern value="ee461l.stockapp.Quote" method="getCloseTime" />
+    <pattern value="ee461l.stockapp.Quote" method="getCompanyName" />
+    <pattern value="ee461l.stockapp.Quote" method="getDelayedPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getDelayedPriceTime" />
+    <pattern value="ee461l.stockapp.Quote" method="getExtendedChange" />
+    <pattern value="ee461l.stockapp.Quote" method="getExtendedChangePercent" />
+    <pattern value="ee461l.stockapp.Quote" method="getExtendedPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getExtendedPriceTime" />
+    <pattern value="ee461l.stockapp.Quote" method="getHigh" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexAskPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexAskSize" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexBidPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexBidSize" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexLastUpdated" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexMarketPercent" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexRealtimePrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexRealtimeSize" />
+    <pattern value="ee461l.stockapp.Quote" method="getIexVolume" />
+    <pattern value="ee461l.stockapp.Quote" method="getLatestPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="getLatestSource" />
+    <pattern value="ee461l.stockapp.Quote" method="getLatestTime" />
+    <pattern value="ee461l.stockapp.Quote" method="getLatestUpdate" />
+    <pattern value="ee461l.stockapp.Quote" method="getLatestVolume" />
+    <pattern value="ee461l.stockapp.Quote" method="getLow" />
+    <pattern value="ee461l.stockapp.Quote" method="getMarketCap" />
+    <pattern value="ee461l.stockapp.Quote" method="getOpen" />
+    <pattern value="ee461l.stockapp.Quote" method="getOpenTime" />
+    <pattern value="ee461l.stockapp.Quote" method="getPeRatio" />
+    <pattern value="ee461l.stockapp.Quote" method="getPreviousClose" />
+    <pattern value="ee461l.stockapp.Quote" method="getPrimaryExchange" />
+    <pattern value="ee461l.stockapp.Quote" method="getSector" />
+    <pattern value="ee461l.stockapp.Quote" method="getSymbol" />
+    <pattern value="ee461l.stockapp.Quote" method="getWeek52High" />
+    <pattern value="ee461l.stockapp.Quote" method="getWeek52Low" />
+    <pattern value="ee461l.stockapp.Quote" method="getYtdChange" />
+    <pattern value="ee461l.stockapp.Quote" />
+    <pattern value="ee461l.stockapp.Quote" method="setAvgTotalVolume" />
+    <pattern value="ee461l.stockapp.Quote" method="setCalculationPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setChange" />
+    <pattern value="ee461l.stockapp.Quote" method="setChangePercent" />
+    <pattern value="ee461l.stockapp.Quote" method="setClose" />
+    <pattern value="ee461l.stockapp.Quote" method="setCloseTime" />
+    <pattern value="ee461l.stockapp.Quote" method="setCompanyName" />
+    <pattern value="ee461l.stockapp.Quote" method="setDelayedPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setDelayedPriceTime" />
+    <pattern value="ee461l.stockapp.Quote" method="setExtendedChange" />
+    <pattern value="ee461l.stockapp.Quote" method="setExtendedChangePercent" />
+    <pattern value="ee461l.stockapp.Quote" method="setExtendedPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setExtendedPriceTime" />
+    <pattern value="ee461l.stockapp.Quote" method="setHigh" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexAskPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexAskSize" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexBidPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexBidSize" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexLastUpdated" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexMarketPercent" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexRealtimePrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexRealtimeSize" />
+    <pattern value="ee461l.stockapp.Quote" method="setIexVolume" />
+    <pattern value="ee461l.stockapp.Quote" method="setLatestPrice" />
+    <pattern value="ee461l.stockapp.Quote" method="setLatestSource" />
+    <pattern value="ee461l.stockapp.Quote" method="setLatestTime" />
+    <pattern value="ee461l.stockapp.Quote" method="setLatestUpdate" />
+    <pattern value="ee461l.stockapp.Quote" method="setLatestVolume" />
+    <pattern value="ee461l.stockapp.Quote" method="setLow" />
+    <pattern value="ee461l.stockapp.Quote" method="setMarketCap" />
+    <pattern value="ee461l.stockapp.Quote" method="setOpen" />
+    <pattern value="ee461l.stockapp.Quote" method="setOpenTime" />
+    <pattern value="ee461l.stockapp.Quote" method="setPeRatio" />
+    <pattern value="ee461l.stockapp.Quote" method="setPreviousClose" />
+    <pattern value="ee461l.stockapp.Quote" method="setPrimaryExchange" />
+    <pattern value="ee461l.stockapp.Quote" method="setSector" />
+    <pattern value="ee461l.stockapp.Quote" method="setSymbol" />
+    <pattern value="ee461l.stockapp.Quote" method="setWeek52High" />
+    <pattern value="ee461l.stockapp.Quote" method="setWeek52Low" />
+    <pattern value="ee461l.stockapp.Quote" method="setYtdChange" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getChart" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getCompany" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getNews" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getPrice" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getQuote" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getSentimentAnalysis" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="getStats" />
+    <pattern value="ee461l.stockapp.SearchInfo" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setChart" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setCompany" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setLogo" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setNews" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setPrice" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setQuote" />
+    <pattern value="ee461l.stockapp.SearchInfo" method="setStats" />
+    <pattern value="ee461l.stockapp.SearchTerms" method="getRefData" />
+    <pattern value="ee461l.stockapp.SearchTerms" />
+    <pattern value="ee461l.stockapp.Stats" method="get_float" />
+    <pattern value="ee461l.stockapp.Stats" method="getBeta" />
+    <pattern value="ee461l.stockapp.Stats" method="getCash" />
+    <pattern value="ee461l.stockapp.Stats" method="getCompanyName" />
+    <pattern value="ee461l.stockapp.Stats" method="getConsensusEPS" />
+    <pattern value="ee461l.stockapp.Stats" method="getDay200MovingAvg" />
+    <pattern value="ee461l.stockapp.Stats" method="getDay30ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getDay50MovingAvg" />
+    <pattern value="ee461l.stockapp.Stats" method="getDay5ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getDebt" />
+    <pattern value="ee461l.stockapp.Stats" method="getDividendRate" />
+    <pattern value="ee461l.stockapp.Stats" method="getDividendYield" />
+    <pattern value="ee461l.stockapp.Stats" method="getEBITDA" />
+    <pattern value="ee461l.stockapp.Stats" method="getEPSSurpriseDollar" />
+    <pattern value="ee461l.stockapp.Stats" method="getEPSSurprisePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getExDividendDate" />
+    <pattern value="ee461l.stockapp.Stats" method="getGrossProfit" />
+    <pattern value="ee461l.stockapp.Stats" method="getInsiderPercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getInstitutionPercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getLatestEPS" />
+    <pattern value="ee461l.stockapp.Stats" method="getLatestEPSDate" />
+    <pattern value="ee461l.stockapp.Stats" method="getMarketcap" />
+    <pattern value="ee461l.stockapp.Stats" method="getMonth1ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getMonth3ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getMonth6ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getNumberOfEstimates" />
+    <pattern value="ee461l.stockapp.Stats" method="getPeRatioHigh" />
+    <pattern value="ee461l.stockapp.Stats" method="getPeRatioLow" />
+    <pattern value="ee461l.stockapp.Stats" method="getPriceToBook" />
+    <pattern value="ee461l.stockapp.Stats" method="getPriceToSales" />
+    <pattern value="ee461l.stockapp.Stats" method="getProfitMargin" />
+    <pattern value="ee461l.stockapp.Stats" method="getReturnOnAssets" />
+    <pattern value="ee461l.stockapp.Stats" method="getReturnOnCapital" />
+    <pattern value="ee461l.stockapp.Stats" method="getReturnOnEquity" />
+    <pattern value="ee461l.stockapp.Stats" method="getRevenue" />
+    <pattern value="ee461l.stockapp.Stats" method="getRevenuePerEmployee" />
+    <pattern value="ee461l.stockapp.Stats" method="getRevenuePerShare" />
+    <pattern value="ee461l.stockapp.Stats" method="getSharesOutstanding" />
+    <pattern value="ee461l.stockapp.Stats" method="getShortDate" />
+    <pattern value="ee461l.stockapp.Stats" method="getShortInterest" />
+    <pattern value="ee461l.stockapp.Stats" method="getShortRatio" />
+    <pattern value="ee461l.stockapp.Stats" method="getSymbol" />
+    <pattern value="ee461l.stockapp.Stats" method="getTtmEPS" />
+    <pattern value="ee461l.stockapp.Stats" method="getWeek52change" />
+    <pattern value="ee461l.stockapp.Stats" method="getWeek52high" />
+    <pattern value="ee461l.stockapp.Stats" method="getWeek52low" />
+    <pattern value="ee461l.stockapp.Stats" method="getYear1ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getYear2ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getYear5ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="getYtdChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" />
+    <pattern value="ee461l.stockapp.Stats" method="set_float" />
+    <pattern value="ee461l.stockapp.Stats" method="setBeta" />
+    <pattern value="ee461l.stockapp.Stats" method="setCash" />
+    <pattern value="ee461l.stockapp.Stats" method="setCompanyName" />
+    <pattern value="ee461l.stockapp.Stats" method="setConsensusEPS" />
+    <pattern value="ee461l.stockapp.Stats" method="setDay200MovingAvg" />
+    <pattern value="ee461l.stockapp.Stats" method="setDay30ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setDay50MovingAvg" />
+    <pattern value="ee461l.stockapp.Stats" method="setDay5ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setDebt" />
+    <pattern value="ee461l.stockapp.Stats" method="setDividendRate" />
+    <pattern value="ee461l.stockapp.Stats" method="setDividendYield" />
+    <pattern value="ee461l.stockapp.Stats" method="setEBITDA" />
+    <pattern value="ee461l.stockapp.Stats" method="setEPSSurpriseDollar" />
+    <pattern value="ee461l.stockapp.Stats" method="setEPSSurprisePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setExDividendDate" />
+    <pattern value="ee461l.stockapp.Stats" method="setGrossProfit" />
+    <pattern value="ee461l.stockapp.Stats" method="setInsiderPercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setInstitutionPercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setLatestEPS" />
+    <pattern value="ee461l.stockapp.Stats" method="setLatestEPSDate" />
+    <pattern value="ee461l.stockapp.Stats" method="setMarketcap" />
+    <pattern value="ee461l.stockapp.Stats" method="setMonth1ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setMonth3ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setMonth6ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setNumberOfEstimates" />
+    <pattern value="ee461l.stockapp.Stats" method="setPeRatioHigh" />
+    <pattern value="ee461l.stockapp.Stats" method="setPeRatioLow" />
+    <pattern value="ee461l.stockapp.Stats" method="setPriceToBook" />
+    <pattern value="ee461l.stockapp.Stats" method="setPriceToSales" />
+    <pattern value="ee461l.stockapp.Stats" method="setProfitMargin" />
+    <pattern value="ee461l.stockapp.Stats" method="setReturnOnAssets" />
+    <pattern value="ee461l.stockapp.Stats" method="setReturnOnCapital" />
+    <pattern value="ee461l.stockapp.Stats" method="setReturnOnEquity" />
+    <pattern value="ee461l.stockapp.Stats" method="setRevenue" />
+    <pattern value="ee461l.stockapp.Stats" method="setRevenuePerEmployee" />
+    <pattern value="ee461l.stockapp.Stats" method="setRevenuePerShare" />
+    <pattern value="ee461l.stockapp.Stats" method="setSharesOutstanding" />
+    <pattern value="ee461l.stockapp.Stats" method="setShortDate" />
+    <pattern value="ee461l.stockapp.Stats" method="setShortInterest" />
+    <pattern value="ee461l.stockapp.Stats" method="setShortRatio" />
+    <pattern value="ee461l.stockapp.Stats" method="setSymbol" />
+    <pattern value="ee461l.stockapp.Stats" method="setTtmEPS" />
+    <pattern value="ee461l.stockapp.Stats" method="setWeek52change" />
+    <pattern value="ee461l.stockapp.Stats" method="setWeek52high" />
+    <pattern value="ee461l.stockapp.Stats" method="setWeek52low" />
+    <pattern value="ee461l.stockapp.Stats" method="setYear1ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setYear2ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setYear5ChangePercent" />
+    <pattern value="ee461l.stockapp.Stats" method="setYtdChangePercent" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="getDate" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="getIexId" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="getName" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="getType" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="isEnabled" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="setDate" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="setEnabled" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="setIexId" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="setName" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="setSymbol" />
+    <pattern value="ee461l.stockapp.SymbolRefData" method="setType" />
+    <pattern value="ee461l.stockapp.SymbolRefData" />
+    <pattern value="ee461l.stockapp.TextViewHolder" method="getTextView" />
+    <pattern value="ee461l.stockapp.TextViewHolder" method="setTextView" />
+    <pattern value="ee461l.stockapp.TextViewHolder" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter" method="getItemCount" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter" method="onBindViewHolder" />
+    <pattern value="ee461l.stockapp.FavoritesListAdapter" method="onCreateViewHolder" />
+    <pattern value="ee461l.stockapp.FavoritesViewHolder" method="applyContent" />
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />

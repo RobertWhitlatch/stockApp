@@ -7,8 +7,9 @@ import java.io.InputStream;
 
 import static ee461l.stockapp.FinancialNews.newsContainer;
 
-public class NewsTask extends AsyncTask<String,Void,Void> {
+class NewsTask extends AsyncTask<String,Void,Void> {
 
+    @SuppressWarnings("CanBeFinal")
     private String mode;
     private int index;
 
@@ -40,8 +41,8 @@ public class NewsTask extends AsyncTask<String,Void,Void> {
                 try{
                     String bitmapUrl = newsContainer.getBitmapStringAtIndex(index);
                     InputStream in = new java.net.URL(bitmapUrl).openStream();
-                    Bitmap bitm = BitmapFactory.decodeStream(in);
-                    newsContainer.setBitmapAtIndex(bitm, index);
+                    Bitmap bmap = BitmapFactory.decodeStream(in);
+                    newsContainer.setBitmapAtIndex(bmap, index);
                 } catch (Exception e){
                     e.printStackTrace();
                 }

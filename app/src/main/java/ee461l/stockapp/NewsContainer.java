@@ -8,6 +8,7 @@ public class NewsContainer {
 
     private ArrayList<String> urlList;
     private ArrayList<String> bitmapStringList;
+    @SuppressWarnings("CanBeFinal")
     private Bitmap[] bitmaps;
     private int size;
 

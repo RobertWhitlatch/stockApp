@@ -13,7 +13,8 @@ public class SearchStocks extends AppCompatActivity {
 
     private EditText searchQuery;
     private TextView invalidSymbol;
-    public static String searchText;
+    private static String searchText;
+    @SuppressWarnings("CanBeFinal")
     public static volatile SearchTerms terms = new SearchTerms();
     public static volatile SearchInfo info = null;
 

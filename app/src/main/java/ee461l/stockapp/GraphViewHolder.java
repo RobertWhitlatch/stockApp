@@ -10,9 +10,10 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import static ee461l.stockapp.Define.LABEL_ANGLE;
 
-public class GraphViewHolder  extends RecyclerView.ViewHolder  {
+class GraphViewHolder  extends RecyclerView.ViewHolder  {
 
     private GraphView gv;
+    @SuppressWarnings("CanBeFinal")
     private ViewGroup parent;
 
     public GraphViewHolder(View v, ViewGroup viewGroup) {

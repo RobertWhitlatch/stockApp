@@ -8,7 +8,5 @@ final class Define {
     final static String requestCrypto = "/stock/market/crypto";
     final static String newsQuery = "stock market";
 
-    final static int SENTIMENT_INDEX = 2;
-
     final static int LABEL_ANGLE = 90;
 }

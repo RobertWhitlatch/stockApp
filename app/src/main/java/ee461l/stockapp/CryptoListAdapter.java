@@ -2,13 +2,15 @@ package ee461l.stockapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CryptoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+class CryptoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    @SuppressWarnings("CanBeFinal")
     private String[] symbols;
     private final View.OnClickListener detailOnClickListener = new View.OnClickListener() {
         @Override
@@ -30,8 +32,9 @@ public class CryptoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return symbols.length;
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View v = inflater.inflate(R.layout.text_view_holder, viewGroup, false);
         return (new TextViewHolder(v));
@@ -39,7 +42,7 @@ public class CryptoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         TextViewHolder vh = (TextViewHolder) viewHolder;
         vh.applyText(symbols[position]);
         vh.itemView.setTag(position);

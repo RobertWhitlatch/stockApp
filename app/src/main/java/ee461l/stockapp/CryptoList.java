@@ -8,6 +8,7 @@ import android.view.View;
 
 public class CryptoList extends AppCompatActivity {
 
+    @SuppressWarnings("CanBeFinal")
     public static volatile CryptoInfo cryptoInfo = new CryptoInfo();
 
     @Override
@@ -17,8 +18,8 @@ public class CryptoList extends AppCompatActivity {
 
         cryptoInfo.buildCryptoSymbols();
 
-        RecyclerView resultsView = findViewById(R.id.crypto_list);
-        resultsView.setAdapter(new CryptoListAdapter(cryptoInfo.getCryptoSymbols()));
+        RecyclerView recyclerView = findViewById(R.id.crypto_list);
+        recyclerView.setAdapter(new CryptoListAdapter(cryptoInfo.getCryptoSymbols()));
     }
 
     public void gotoHome(View v){

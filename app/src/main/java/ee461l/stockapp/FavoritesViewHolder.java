@@ -8,10 +8,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class FavoritesViewHolder extends RecyclerView.ViewHolder {
+class FavoritesViewHolder extends RecyclerView.ViewHolder {
 
     private TextView tv;
     private ImageView iv;
+    @SuppressWarnings("CanBeFinal")
     private ViewGroup parent;
 
     public FavoritesViewHolder(View v, ViewGroup parent){
