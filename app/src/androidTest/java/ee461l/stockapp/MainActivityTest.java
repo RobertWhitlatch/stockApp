@@ -4,12 +4,17 @@ import android.support.test.espresso.Espresso;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.rule.ActivityTestRule;
 
+import com.google.gson.Gson;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -26,6 +31,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static ee461l.stockapp.Define.*;
+import static ee461l.stockapp.SentimentAnalyst.accessKey;
+import static ee461l.stockapp.SentimentAnalyst.host;
+import static ee461l.stockapp.SentimentAnalyst.path;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.*;
 import static android.support.test.espresso.intent.Intents.intended;
@@ -62,12 +70,12 @@ public class MainActivityTest {
         if(MainActivity.current_account.getAccount() != null){
             Espresso.onView(withId(R.id.search_stocks)).check(matches(isDisplayed()));
             Espresso.onView(withId(R.id.my_favorites)).check(matches(isDisplayed()));
-            Espresso.onView(withId(R.id.todays_tidbits)).check(matches(isDisplayed()));
+            Espresso.onView(withId(R.id.crypto)).check(matches(isDisplayed()));
             Espresso.onView(withId(R.id.financial_news)).check(matches(isDisplayed()));
         }else{
             Espresso.onView(withId(R.id.search_stocks)).check(matches(not(isDisplayed())));
             Espresso.onView(withId(R.id.my_favorites)).check(matches(not(isDisplayed())));
-            Espresso.onView(withId(R.id.todays_tidbits)).check(matches(not(isDisplayed())));
+            Espresso.onView(withId(R.id.crypto)).check(matches(not(isDisplayed())));
             Espresso.onView(withId(R.id.financial_news)).check(matches(not(isDisplayed())));
         }
 
@@ -83,7 +91,7 @@ public class MainActivityTest {
          */
         Espresso.onView(withId(R.id.search_stocks)).check(matches(isClickable()));
         Espresso.onView(withId(R.id.my_favorites)).check(matches(isClickable()));
-        Espresso.onView(withId(R.id.todays_tidbits)).check(matches(isClickable()));
+        Espresso.onView(withId(R.id.crypto)).check(matches(isClickable()));
         Espresso.onView(withId(R.id.financial_news)).check(matches(isClickable()));
     }
 
@@ -119,8 +127,8 @@ public class MainActivityTest {
         /*
         This test checks if Todays TidBits page intent is able to be launched
          */
-        Espresso.onView(withId(R.id.todays_tidbits)).perform(click());
-        intended(hasComponent(TodaysTidbits.class.getName()));
+        Espresso.onView(withId(R.id.crypto)).perform(click());
+        intended(hasComponent(Crypto.class.getName()));
     }
 
     @Test
@@ -159,6 +167,16 @@ public class MainActivityTest {
     }
 
     @Test
+    public void StockAPIFormatTest() throws Exception {
+        CallIEX fetchStock = new CallIEX("search");
+        String searchText = "GOOGL";
+        Void result = fetchStock.execute(apiEndpoint + stockRequest + searchText + requestCQNSCLP).get();
+        Company expectedcompany = new Company();
+        expectedcompany.setSymbol("GOOGL");
+        assertEquals(expectedcompany.getSymbol(), SearchStocks.info.getSymbol());
+    }
+
+    @Test
     public void NewsAPITest() throws Exception {
         URL url = new URL(BingNewsSearch.host + BingNewsSearch.path + "?q=" +  URLEncoder.encode("stock market", "UTF-8"));
         HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
@@ -168,6 +186,42 @@ public class MainActivityTest {
         assertNotNull(response);
     }
 
+    @Test
+    public void NewsAPIFormatTest() throws Exception {
+        URL url = new URL(BingNewsSearch.host + BingNewsSearch.path + "?q=" +  URLEncoder.encode("stock market", "UTF-8"));
+        HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
+        connection.setRequestProperty("Ocp-Apim-Subscription-Key", BingNewsSearch.subscriptionKey);
+        InputStream stream = connection.getInputStream();
+        String response = new Scanner(stream).useDelimiter("\\A").next();
+        String expected = "stock market";
+        assertTrue(response.contains(expected));
+    }
+
+    @Test
+    public void SentimentAPITest() throws Exception {
+        String prettyRespNews = "";
+        SearchResults result = BingNewsSearch.SearchNews("GOOGL" +" opinion");
+        System.out.println(BingNewsSearch.prettify(result.jsonResponse));
+        prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
+
+        Documents documents = new Documents ();
+        documents.add("1", "en", prettyRespNews);
+        String response = SentimentAnalyst.GetSentiment (documents);
+        assertNotNull(response);
+    }
+
+    @Test
+    public void SentimentAPIFormatTest() throws Exception {
+        String prettyRespNews = "";
+        SearchResults result = BingNewsSearch.SearchNews("aaasdasdawga" +" opinion");
+        System.out.println(BingNewsSearch.prettify(result.jsonResponse));
+        prettyRespNews = BingNewsSearch.prettify(result.jsonResponse);
+
+        Documents documents = new Documents ();
+        documents.add("1", "en", prettyRespNews);
+        String response = SentimentAnalyst.GetSentiment (documents);
+        assertNotNull(response);
+    }
     @Test
     public void DataBaseTest() throws Exception {
         /*
