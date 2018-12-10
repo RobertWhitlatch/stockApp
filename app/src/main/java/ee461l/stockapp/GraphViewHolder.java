@@ -10,7 +10,6 @@ import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import static ee461l.stockapp.Define.LABEL_ANGLE;
-import static ee461l.stockapp.SearchStocks.info;
 
 public class GraphViewHolder  extends RecyclerView.ViewHolder  {
 
@@ -48,7 +47,7 @@ public class GraphViewHolder  extends RecyclerView.ViewHolder  {
     }
 
 
-    
+
     class SentimentTask extends AsyncTask<String, Void, String> {
 
         protected  String doInBackground(String ... str){

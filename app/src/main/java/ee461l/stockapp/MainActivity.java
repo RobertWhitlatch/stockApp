@@ -2,6 +2,7 @@ package ee461l.stockapp;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,19 +18,19 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import static ee461l.stockapp.Define.*;
 import static ee461l.stockapp.FavoritesList.favorites;
 import static ee461l.stockapp.FavoritesList.symbols;
 import static ee461l.stockapp.FavoritesList.logoURLs;
+import static ee461l.stockapp.FinancialNews.newsContainer;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     GoogleSignInClient mGoogleSignInClient;
-    public static GoogleSignInAccount current_account; //EDITED
-    public static AppDataBase appDataBase; //EDITED
+    public static GoogleSignInAccount current_account;
+    public static AppDataBase appDataBase;
     public static User currentUser;
 
     @Override
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart(){
         super.onStart();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if(account != null){ //EDITED  (Maybe edge case?) // RESPONSE: It is guarded against in updateUI();
+        if(account != null){
             current_account = account;
         }
         updateUI(account);
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            current_account = account; //EDITED
+            current_account = account;
             // Signed in successfully, show authenticated UI.
             updateUI(account);
         } catch (ApiException e) {
@@ -131,7 +132,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.my_favorites).setVisibility(View.VISIBLE);
         findViewById(R.id.crypto).setVisibility(View.VISIBLE);
         findViewById(R.id.financial_news).setVisibility(View.VISIBLE);
-        findViewById(R.id.mitchell_news).setVisibility(View.VISIBLE);
     }
 
     public void gotoSearchStocks(View v){
@@ -170,18 +170,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void gotoFinancialNews(View v){
-        Intent intent = new Intent(getApplicationContext(), FinancialNews.class);
-        startActivity(intent);
-    }
-
-    public void gotoMitchellNews(View v){
-        CallNewsApi fetchNews = new CallNewsApi();
-        try {
-            Object obj = fetchNews.execute(newsEndpoint + openSearch + stockMarketNews + newsAPIKey).get();
-        } catch (Exception e) {
+        try{
+            NewsTask fetchNews = new NewsTask("news");
+            Object obj = fetchNews.execute(newsQuery).get();
+        } catch(Exception e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(getApplicationContext(), MitchellNews.class);
+        for(int i = 0; i < newsContainer.size(); i++){
+            try{
+                NewsTask fetchNews = new NewsTask("image", i);
+                Object obj = fetchNews.execute(newsQuery).get();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        for(int i = 0; i < newsContainer.size(); i++){
+            if(newsContainer.getBitmapAtIndex(i) == null){
+                newsContainer.setBitmapAtIndex(BitmapFactory.decodeResource(getResources(), R.drawable.dummy), i);
+            }
+        }
+        newsContainer.size();
+        Intent intent = new Intent(getApplicationContext(), FinancialNews.class);
         startActivity(intent);
     }
 

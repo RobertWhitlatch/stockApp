@@ -42,4 +42,5 @@ public class CryptoDisplay extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
+
 }

@@ -6,7 +6,6 @@ import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.NonNull;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 

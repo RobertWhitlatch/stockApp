@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import javax.net.ssl.HttpsURLConnection;
+
 class SearchResults{
     HashMap<String, String> relevantHeaders;
     String jsonResponse;
@@ -24,6 +25,7 @@ class SearchResults{
         jsonResponse = json;
     }
 }
+
 public class BingNewsSearch {
 
     // Replace the subscriptionKey string value with your valid subscription key.

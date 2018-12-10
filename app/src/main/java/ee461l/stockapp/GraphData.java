@@ -1,7 +1,6 @@
 package ee461l.stockapp;
 
 import com.jjoe64.graphview.series.DataPoint;
-
 import java.util.Date;
 
 public class GraphData {
