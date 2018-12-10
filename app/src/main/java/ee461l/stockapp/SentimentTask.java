@@ -1,14 +1,19 @@
 package ee461l.stockapp;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
+
+import com.jjoe64.graphview.GraphView;
+
+import java.lang.ref.WeakReference;
 
 class SentimentTask extends AsyncTask<String, Void, String> {
 
     @SuppressWarnings("CanBeFinal")
-    private SearchInfo info;
+    private WeakReference<GraphView> gv;
 
-    public SentimentTask(SearchInfo info){
-        this.info = info;
+    public SentimentTask(WeakReference<GraphView> gv){
+        this.gv = gv;
     }
 
     protected  String doInBackground(String ... str){
@@ -34,7 +39,9 @@ class SentimentTask extends AsyncTask<String, Void, String> {
         num = (double)Math.round(num * 1000d) / 1000d;
         String numString = Double.toString(num);
         sentimentString += numString + setSentimentRange(Double.parseDouble(str));
-        info.setSentimentAnalysis(sentimentString);
+        gv.get().setTitle(sentimentString);
+        gv.get().setTitleTextSize(50.0f);
+        gv.get().setTitleColor(Color.RED);
     }
 
     private String setSentimentRange(double sentiment){

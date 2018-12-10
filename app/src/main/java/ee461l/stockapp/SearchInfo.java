@@ -9,7 +9,6 @@ public class SearchInfo {
     private ChartDay[] chart;
     private Logo logo;
     private /*double*/ String price;
-    private transient String sentimentAnalysis;
 
     public GraphData fetchGraphData(){
         GraphData data = new GraphData(chart.length);
@@ -20,11 +19,10 @@ public class SearchInfo {
     }
 
     public String[] getDisplaySet(){
-        String[] set = new String[17+news.length];
+        String[] set = new String[16 + news.length];
         int i = 0;
         set[i++] = logo.getUrl();
         set[i++] = "Price: " + price;
-        set[i++] = sentimentAnalysis;
         set[i++] = "Description: " + company.getDescription();
         set[i++] = "Primary Exchange: " + quote.getPrimaryExchange();
         set[i++] = "Open: " + chart[chart.length-1].getOpen();
@@ -43,14 +41,6 @@ public class SearchInfo {
             set[i++] = "Headline: " + paper.getHeadline();
         }
         return set;
-    }
-
-    public String getSentimentAnalysis() {
-        return sentimentAnalysis;
-    }
-
-    public void setSentimentAnalysis(String sentimentAnalysis) {
-        this.sentimentAnalysis = sentimentAnalysis;
     }
 
     public String getSymbol(){

@@ -1,5 +1,6 @@
 package ee461l.stockapp;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -36,7 +38,7 @@ class GraphViewHolder  extends RecyclerView.ViewHolder  {
         this.gv = gv;
     }
 
-    public void applyGraph(GraphData dataSource){
+    public void applyGraph(GraphData dataSource, String symbol){
 
         gv.addSeries(new LineGraphSeries<>(dataSource.getGraphData()));
 
@@ -50,17 +52,20 @@ class GraphViewHolder  extends RecyclerView.ViewHolder  {
         gv.getViewport().setXAxisBoundsManual(true);
         gv.getViewport().setMinX(dataSource.getMinX());
         gv.getViewport().setMaxX(dataSource.getMaxX());
-        new AsyncUpdateGraph().execute(dataSource);
-    }
-
-    public void addPredictionLine(GraphData dataSource){
-        gv.addSeries(new LineGraphSeries<>(dataSource.getGraphData()));
+        new SentimentTask(new WeakReference<>(gv)).execute(symbol);
+        new AsyncUpdateGraph(new WeakReference<>(gv)).execute(dataSource);
     }
 
     class AsyncUpdateGraph extends AsyncTask<GraphData, Integer, ArrayList<Double>> {
 
-        GraphData data; //needed to get information about date
-        private int numOfPredictions = 7;
+        private WeakReference<GraphView> gv;
+        private GraphData data; //needed to get information about date
+        private final int numOfPredictions = 7;
+
+        public AsyncUpdateGraph(WeakReference<GraphView> gv){
+            this.gv = gv;
+        }
+
         protected ArrayList<Double> doInBackground(GraphData... data) {
             this.data = data[0];
             return ServerHandler.PredictRequest(data[0].getClosingData());
@@ -77,8 +82,10 @@ class GraphViewHolder  extends RecyclerView.ViewHolder  {
                 c.add(Calendar.DATE, 1);
                 predictedData.addDataPoint(c.getTime(), result.get(i), i );
             }
-            addPredictionLine(predictedData);
-            gv.getViewport().setMaxX(predictedData.getMaxX());
+            LineGraphSeries<DataPoint> prediction = new LineGraphSeries<>(predictedData.getGraphData());
+            prediction.setColor(Color.RED);
+            gv.get().addSeries(prediction);
+            gv.get().getViewport().setMaxX(predictedData.getMaxX());
         }
     }
 }

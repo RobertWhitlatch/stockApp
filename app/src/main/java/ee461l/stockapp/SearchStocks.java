@@ -40,12 +40,6 @@ public class SearchStocks extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            SentimentTask fetchSentiment = new SentimentTask(info);
-            try {
-                Object obj = fetchSentiment.execute(searchText).get();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             Intent intent = new Intent(getApplicationContext(), SearchResultsDisplay.class);
             startActivity(intent);
         } else {
